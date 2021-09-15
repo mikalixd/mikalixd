@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Device width detection for Chrome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Lab #2</title>
+    <!-- Internal CSS -->
+    <style>
+        .flex-item {
+            background-color: lightsalmon;
+            height: 50px;
+            width: 150px;
+            line-height: 50px;
+            text-align: center;
+            margin: 5px;
+            flex-grow: 1;
+            /* Growth factor */
+        }
+
+        /* Display Properties */
+        .flex-container {
+            display: flex;
+            /* Display property: flexible */
+            justify-content: space-around;
+            /* spread the blocks evenly for widescreen Thanks */
+            flex-wrap: wrap
+                /* Block can render to another row */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <!-- Inline CSS -->
+            <div class="flex-item" style="flex-grow:3">3</div>
+            <div class="flex-item">4</div>
+        </div>
+    </section>
+    <!-- Bulma Grid System -->
+    <section class="section">
+        <div class="container">
+            <!-- Bulma: Adding is-mobile in class name will lock all display pattern in horizonal -->
+            <!-- Bulma: Adding is-multiline in class name will move to other rows when crowded -->
+            <div class="columns is-mobile is-multiline is-vcentered">
+                <!-- Bulma: Adding is-half-mobile in class name will occupy only half when mobile -->
+                <!-- Bulma: is-square 3by4 would be ratio modifier -->
+                <div class="column is-half-mobile card">
+                    <figure class="image is-square">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum1/500/500" />
+                    </figure>
+                </div>
+                <div class="column is-half-mobile card">
+                    <figure class="image is-3by4">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum5/500/1500" />
+                    </figure>
+                </div>
+                <div class="column is-half-mobile card">
+                    <figure class="image is-4by3">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum2/1500/500" />
+                    </figure>
+                </div>
+                <div class="column is-half-mobile card">
+                    <figure class="image is-square">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum4/500/500" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <script>
+    </script>
+</body>
+
+</html>
