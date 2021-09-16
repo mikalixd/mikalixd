@@ -4,11 +4,12 @@ th {
     width: 150px;
     background-color: lightsteelblue;
 }
+
 /* All the "td" cell */
 td {
     height: 40px;
     /* Border */
-    /* border-style: dotted/ solid */
+    /* border-style: dotted, solid */
     border-style: dotted;
     border-width: thin;
     border-color: darkgray;
@@ -16,18 +17,21 @@ td {
     text-align: right;
     vertical-align: top;
 }
-/* adjacent table cells to share borders */
+
 table {
+    /* adjacent table cells to share borders */
     border-collapse: collapse;
 }
-/* color & transform properties */
+
 caption {
+    /* color & transform properties */
     color: darkmagenta;
     text-transform: uppercase;
     /* CSS Font */
     font-family: Arial;
     font-weight: 900;
 }
+
 /* Object fit */
 img {
     width: 250px;
@@ -38,10 +42,12 @@ img {
     float: right;
     margin: 5px 15px; /* first: Top Bottom ; Second: Left Right */
 }
+
 /* CSS Selector */
 .sundays {
     color: firebrick;
 }
+
 /* ID Selector */
 #bookmark {
     text-align: center;
