@@ -74,8 +74,92 @@
             </div>
         </div>
     </section>
+    <!-- Bulma Button -->
+    <section class="section">
+        <div class="container">
+            <div class="buttons">
+                <button class="button is-primary" onclick="btn1Clicked(this)">
+                    I'm Button 1, Click me!
+                </button>
+                <button class="button is-warning is-light" onclick="btn2Clicked(this)">
+                    I'm Button 2, Click me!
+                </button>
+                <button class="button is-primary is-outlined" onclick="btn3Clicked()">
+                    I'm Button 3, Click me!
+                </button>
+                <button class="button is-warning is-inverted" onclick="btn4Clicked()">
+                    I'm Button 4, Click me!
+                </button>
+                <button class="button is-primary is-outlined is-rounded" onclick="btn5Clicked()">
+                    I'm Button 5, Click me!
+                </button>
+                <button class="button is-warning is-rounded" onclick="btn6Clicked()">
+                    I'm Button 6, Click me!
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <img id="pic" style="float:right" src="https://picsum.photos/id/326/150/150" />
+    <div id="rack"></div>
+
     <!-- JavaScript -->
     <script>
+        function btn1Clicked(elem) {
+            // Console log for debugging
+            console.log("console output");
+            // We passed "this" in onclick, elem reflect on it
+            // innerHTML = content of btn1; We are going to replace the element of btn1.
+            elem.innerHTML = "Don't click me!";
+        }
+        function btn2Clicked(elem) {
+            // Hide the element by modifying it CSS property
+            elem.style.display = "none";
+            // ParentNode = Parent element of this HTML [div]
+            // Add bulma property for this div; All button will be enlarge
+            elem.parentNode.classList.add("are-medium");
+        }
+        function btn3Clicked() {
+            // getElementByID = Search by ID
+            var pic = document.getElementById("pic");
+            if (pic.style.float == "left") {
+                pic.style.float = "right";
+            } else {
+                pic.style.float = "left";
+            }
+        }
+        function btn4Clicked() {
+            // Hold two values in javascript object
+            var size = {
+                width: 480,
+                height: 360
+            };
+            document.getElementById("pic").src
+                = "https://picsum.photos/id/326/" + size.width + "/" + size.height;
+        }
+        function btn5Clicked() {
+            // Find all element with below wordings
+            var figures = document.querySelectorAll(".is-square, .is-16by9");
+            // Give us the length = 2 [2 Element found]
+            console.log(figures.length);
+            // forEach = go through one by one
+            // toggle = on/off
+            // Effect: Switch between is-square & is-16by9
+            figures.forEach(function (figure) {
+                figure.classList.toggle("is-square");
+                figure.classList.toggle("is-16by9");
+            });
+        };
+        // Dynamic Code
+        function btn6Clicked() {
+            var dynamicCode = '<table class="table is-bordered is-striped">';
+            var teamMembers = ["Martin", "Kenny", "Tony"];
+            teamMembers.forEach(function (member) {
+                dynamicCode += "<tr><td>" + member + "</td></tr>";
+            });
+            document.querySelector("#rack").innerHTML = dynamicCode + "</table>";
+        }
+
     </script>
 </body>
 
