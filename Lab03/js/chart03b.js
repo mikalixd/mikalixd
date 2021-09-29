@@ -1,4 +1,5 @@
-const data2 = {
+document.addEventListener("DOMContentLoaded", function () {
+const data = {
     labels: [
         'Intentional',
         'Unintentional',
@@ -15,9 +16,9 @@ const data2 = {
         hoverOffset: 4
     }]
 };
-const config2 = {
+const config = {
     type: 'doughnut',
-    data: data2,
+    data: data,
     options: {
         plugins: {
             title: {
@@ -36,5 +37,6 @@ const config2 = {
 };
 var myChart = new Chart(
     document.getElementById('myChart2'),
-    config2
+    config
 );
+})
