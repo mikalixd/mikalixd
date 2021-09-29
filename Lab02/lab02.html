@@ -155,8 +155,10 @@
             var dynamicCode = '<table class="table is-bordered is-striped">';
             var teamMembers = ["Martin", "Kenny", "Tony"];
             teamMembers.forEach(function (member) {
+                // Append the element
                 dynamicCode += "<tr><td>" + member + "</td></tr>";
             });
+            // Add into div=rack
             document.querySelector("#rack").innerHTML = dynamicCode + "</table>";
         }
 
