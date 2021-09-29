@@ -23,12 +23,12 @@
 
         /* Display Properties */
         .flex-container {
-            display: flex;
             /* Display property: flexible */
+            display: flex;
+            /* spread the blocks evenly for widescreen */
             justify-content: space-around;
-            /* spread the blocks evenly for widescreen Thanks */
+            /* Block can render to another row */
             flex-wrap: wrap
-                /* Block can render to another row */
         }
     </style>
 </head>
@@ -46,11 +46,11 @@
     <!-- Bulma Grid System -->
     <section class="section">
         <div class="container">
-            <!-- Bulma: Adding is-mobile in class name will lock all display pattern in horizonal -->
-            <!-- Bulma: Adding is-multiline in class name will move to other rows when crowded -->
+            <!-- Bulma: Class name with "is-mobile" = lock all display pattern in horizonal
+                 Bulma: Class name with "is-multiline" = move to other rows when crowded
+                 Bulma: Class name with "is-half-mobile" = occupy only half when mobile -->
             <div class="columns is-mobile is-multiline is-vcentered">
-                <!-- Bulma: Adding is-half-mobile in class name will occupy only half when mobile -->
-                <!-- Bulma: is-square 3by4 would be ratio modifier -->
+                <!-- Bulma: is-square,3by4 = ratio modifier -->
                 <div class="column is-half-mobile card">
                     <figure class="image is-square">
                         <img style="object-fit:cover" src="https://picsum.photos/seed/picsum1/500/500" />
