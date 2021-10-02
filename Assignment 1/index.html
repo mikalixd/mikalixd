@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="interface.css">
     <title>Staff Quarters at Fo Tan</title>
 
     <style>
@@ -14,45 +15,60 @@
 </head>
 
 <body class="index has-navbar-fixed-top">
+    <!-- Nav Bar -->
     <nav class="navbar signal-navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
-            <div class="navbar-brand"> <a href="/index.html"> <img class="logo" src="\pic\quarterlogo.png">
+            <div class="navbar-brand"> <a href="/index.html"> <img class="logo" src="/Assignment 1/pic/quarterlogo.png" width="400">
                     <!-- remain dist with logo -->
                 </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
                     data-target="signalNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
                         aria-hidden="true"></span> </a></div>
             <div id="signalNavbar" class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item" href="index.html">Development</a>
-                        <div class="navbar-item has-dropdown is-hoverable"> <!-- The Quarters -->
-                        <a href="#"
-                            class="navbar-link quarter-option no-underline" data-toggle="dropdown" role="button"
-                            aria-haspopup="true" aria-expanded="false" aria-label="quarter-option"
-                            id="quarter-option"> <i class="icon icon-globe"></i>The Quarters<span class="caret"></span>
+                <div class="navbar-end">
+                    <a class="navbar-item" href="index.html">Development</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <!-- The Quarters -->
+                        <a href="#" class="navbar-link quarter-option no-underline" data-toggle="dropdown" role="button"
+                            aria-haspopup="true" aria-expanded="false" aria-label="quarter-option" id="quarter-option">
+                            <i class="icon icon-globe"></i>The Quarters<span class="caret"></span>
                         </a>
-                        <div class="navbar-dropdown" aria-labelledby="quarter-option"> 
+                        <div class="navbar-dropdown" aria-labelledby="quarter-option">
                             <a class="navbar-item" href="/Assignment 1/quarters/apartment.html">Apartment</a>
                             <a class="navbar-item" href="/Assignment 1/quarters/carpark.html">Carpark</a>
                             <a class="navbar-item" href="/Assignment 1/quarters/facility.html">Facility</a>
                             <a class="navbar-item" href="/Assignment 1/quarters/useful_tips.html">Useful Tips</a>
                             <a class="navbar-item" href="/Assignment 1/quarters/utility.html">Utility</a>
                         </div>
-                        </div>
-                        <a class="navbar-item" href="management.html">Management</a>
-                        <a class="navbar-item" href="public_facility.html">Public Facility</a>
-                        <a class="navbar-item" href="useful_info.html">Useful Info</a>
-                        <a class="navbar-item" href="mailto://ssq@hkbu.edu.hk">Email Us</a>
                     </div>
+                    <a class="navbar-item" href="management.html">Management</a>
+                    <a class="navbar-item" href="public_facility.html">Public Facility</a>
+                    <a class="navbar-item" href="useful_info.html">Useful Info</a>
+                    <a class="navbar-item" href="mailto://ssq@hkbu.edu.hk">Email Us</a>
+                </div>
             </div>
         </div>
     </nav>
+    <!-- Main Frame -->
+    <section class="hero-main hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-two-fifths">
+                        <h1>The Development</h1>
+                        <p class="body1">Built upon the hillside of Fo Tan in Sha Tin and overlooking the scenery of Sha Tin Town Centre, the development was occupied by Hong Kong Baptist University (HKBU) in the autumn of 1994. At present, Towers 1, 2 and 3 are used as the staff quarters of the University with a total of 68 units in the three towers.</p>
+                        <p> <br> <a class="applynow button button-white" href="apply.html"> Apply Now! </a></p>
+                    </div>
+                    <div class="column mobile-screenshots"> 
+                        <img class="screenshot1" src="/Assignment 1/pic/quarter_image1.png" width="500"style="float: right;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="column card">
-        The development
-    </div>
-    </div>
     <script>
     </script>
+
 </body>
 
 </html>

@@ -1,0 +1,27 @@
+.hero.hero-main {
+    background-color: #9DBBF8;
+    color: #1b1b1b;
+    max-height: 760px;
+}
+
+.hero-main h1 {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 64px;
+}
+
+p.body1 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+p.body1 {
+    height: 10em;
+    display: flex; 
+    align-items: center;
+}
