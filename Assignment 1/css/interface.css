@@ -1,0 +1,50 @@
+.hero.hero-main {
+    background-color: #9DBBF8;
+    color: #1b1b1b;
+    max-height: 760px;
+}
+
+.hero-main h1 {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 64px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 44px;
+}
+
+p.body1 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+p.body1 {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+.section.why-hkbu {
+    background-color: #ECECEC;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    background-color: lightsalmon;
+    height: 50px;
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    margin: 5px;
+}
