@@ -7,33 +7,54 @@
     <meta charset="utf-8">
     <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/Assignment 1/css/interface.css">
     <title>Staff Quarters at Fo Tan</title>
 
     <style>
     </style>
 </head>
 
-<body>
-    <div class="columns">
-        <div class="column card">
-            The development
-            The Quarters
-                Apartment
-                Facility
-                Carpark
-                Utility
-                Useful Tips
-            Management
-            Public Facility
-            Useful Form & Telephone No.
-            Email Us
+<body class="index has-navbar-fixed-top">
+    <!-- Nav Bar -->
+    <nav class="navbar signal-navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand"> <a href="/Assignment 1/index.html"> <img class="logo"
+                        src="/Assignment 1/pic/quarterlogo.png" width="400">
+                    <!-- remain dist with logo -->
+                </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="signalNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
+                        aria-hidden="true"></span> </a></div>
+            <div id="signalNavbar" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="/Assignment 1/index.html">Development</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <!-- The Quarters -->
+                        <a href="/Assignment 1/quarters.html" class="navbar-link quarter-option no-underline" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false" aria-label="quarter-option"
+                            id="quarter-option">
+                            <i class="icon icon-globe"></i>The Quarters<span class="caret"></span>
+                        </a>
+                        <div class="navbar-dropdown" aria-labelledby="quarter-option">
+                            <a class="navbar-item" href="/Assignment 1/quarters/apartment.html">Apartment</a>
+                            <a class="navbar-item" href="/Assignment 1/quarters/carpark.html">Carpark</a>
+                            <a class="navbar-item" href="/Assignment 1/quarters/facility.html">Facility</a>
+                            <a class="navbar-item" href="/Assignment 1/quarters/useful_tips.html">Useful Tips</a>
+                            <a class="navbar-item" href="/Assignment 1/quarters/utility.html">Utility</a>
+                        </div>
+                    </div>
+                    <a class="navbar-item" href="/Assignment 1/management.html">Management</a>
+                    <a class="navbar-item" href="/Assignment 1/public_facility.html">Public Facility</a>
+                    <a class="navbar-item" href="/Assignment 1/useful_info.html">Useful Info</a>
+                    <a class="navbar-item" href="mailto://ssq@hkbu.edu.hk">Email Us</a>
+                </div>
+            </div>
         </div>
-        <div class="column card" style="flex-grow:4">
-            The Quarters - Carpark
-        </div>
-    </div>
+    </nav>
+    <div>----</div>
+    <div><h1>Carpark</h1></div>
     <script>
     </script>
+
 </body>
 
 </html>

@@ -48,3 +48,40 @@ p.body1 {
     text-align: center;
     margin: 5px;
 }
+
+.circle__progress--fill {
+    --initialStroke: 0;
+    --transitionDuration: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: var(--initialStroke);
+    stroke-dashoffset: var(--initialStroke);
+    transition: stroke-dashoffset var(--transitionDuration) ease;
+  }
+  
+
+@import url('https://fonts.googleapis.com/css?family=Nixie+One|Raleway:200');
+
+.circle {
+    position: relative;
+  }
+  
+  .percent {
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    line-height: 28px;
+    transform: translate(-50%, -50%);
+  }
+  
+  .percent__int { font-size: 28px; }
+  .percent__dec { font-size: 12px; }
+  
+  .label {
+    font-family: 'Raleway', serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 15px;
+  }
