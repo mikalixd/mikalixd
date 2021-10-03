@@ -41,7 +41,6 @@ p.body1 {
 }
 
 .flex-item {
-    background-color: lightsalmon;
     height: 50px;
     width: 150px;
     line-height: 50px;
@@ -85,3 +84,11 @@ p.body1 {
     text-transform: uppercase;
     margin-top: 15px;
   }
+
+#copyright {
+    margin: 1% auto 1% 5%;
+}
+
+#social_media {
+    float: right;
+}
