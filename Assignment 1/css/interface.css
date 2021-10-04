@@ -26,10 +26,15 @@ p.body1 {
     line-height: 28px;
 }
 
-p.body1 {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
+body {
+    --font-size--small: 18px;
+    --font-size--normal: 20px;
+    --font-size--medium: 20px;
+    --font-size--large: 24px;
+    --font-size--huge: 96px;
+    --font-size--extra-small: 16px;
+    --font-size--extra-large: 40px;
+    --font-size--gigantic: 144px;
 }
 
 .section.why-hkbu {
@@ -56,35 +61,20 @@ p.body1 {
     stroke-dashoffset: var(--initialStroke);
     transition: stroke-dashoffset var(--transitionDuration) ease;
   }
-  
-
-@import url('https://fonts.googleapis.com/css?family=Nixie+One|Raleway:200');
-
-.circle {
-    position: relative;
-  }
-  
-  .percent {
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    position: absolute;
-    font-weight: bold;
-    text-align: center;
-    line-height: 28px;
-    transform: translate(-50%, -50%);
-  }
-  
-  .percent__int { font-size: 28px; }
-  .percent__dec { font-size: 12px; }
-  
-  .label {
-    font-family: 'Raleway', serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-top: 15px;
-  }
 
 #copyright {
     margin: 1% auto 1% 5%;
+}
+
+.huge-font {
+    font-size: var(--font-size--huge);
+}
+
+.columns {
+    display: flex;;
+}
+
+.needhelp{
+    background-color: #ECECEC;
+    border-style: solid;
 }
