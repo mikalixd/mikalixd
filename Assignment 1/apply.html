@@ -16,22 +16,21 @@
 
 <body class="index has-navbar-fixed-top">
     <!-- Nav Bar -->
-    <nav class="navbar signal-navbar is-fixed-top" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand"> <a href="/Assignment 1/index.html"> <img class="logo"
                         src="/Assignment 1/pic/quarterlogo.png" width="400">
                     <!-- remain dist with logo -->
                 </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="signalNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> <span
-                        aria-hidden="true"></span> </a></div>
-            <div id="signalNavbar" class="navbar-menu">
+                    data-target="Navbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span>
+                    <span> aria-hidden="true"></span> </a></div>
+            <div id="Navbar" class="navbar-menu">
                 <div class="navbar-end">
-                    <a class="navbar-item" href="/Assignment 1/index.html">Development</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <!-- The Quarters -->
-                        <a href="/Assignment 1/quarters.html" class="navbar-link quarter-option no-underline" data-toggle="dropdown"
-                            role="button" aria-haspopup="true" aria-expanded="false" aria-label="quarter-option"
-                            id="quarter-option">
+                        <a href="/Assignment 1/quarters.html" class="navbar-link quarter-option no-underline"
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            aria-label="quarter-option" id="quarter-option">
                             <i class="icon icon-globe"></i>The Quarters<span class="caret"></span>
                         </a>
                         <div class="navbar-dropdown" aria-labelledby="quarter-option">
@@ -42,6 +41,7 @@
                             <a class="navbar-item" href="/Assignment 1/quarters/utility.html">Utility</a>
                         </div>
                     </div>
+                    <a class="navbar-item" href="/Assignment 1/index.html">Development</a>
                     <a class="navbar-item" href="/Assignment 1/management.html">Management</a>
                     <a class="navbar-item" href="/Assignment 1/public_facility.html">Public Facility</a>
                     <a class="navbar-item" href="/Assignment 1/useful_info.html">Useful Info</a>
@@ -51,7 +51,33 @@
         </div>
     </nav>
     <div>----</div>
-    <div><h1>Apply</h1></div>
+    <section class="appform">
+        <div class="container">
+            <h1>Application Form for HKBU Staff Quarter</h1>
+            <p><h2>1. Room details</h2></p>
+            <p>Choose your room type:</p>
+            <form>
+                <input type="radio" id="two" name="roomtype" value="2-Bed">
+                <label for="two">2</label><br>
+                <input type="radio" id="three" name="roomtype" value="3-Bed">
+                <label for="three">3</label><br>
+                <input type="radio" id="four" name="roomtype" value="4-Bed">
+                <label for="four">4</label>
+            </form>
+            <p><h2>2. Personal Particular</h2></p>
+            <form>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname">
+            </form>
+        </div>
+
+
+    </section>
+
+
+
     <section class="copyright">
         <div id="copyright" class="columns">
             <div class="column is-four-fifths">
@@ -60,7 +86,7 @@
             <div class="column"></div>
             <div class="column">
                 <a target="_blank" href="https://www.facebook.com/HongKongBaptistUniversity"><img class="logo"
-                            src="/Assignment 1/pic/facebook.png" width="40"> </a>
+                        src="/Assignment 1/pic/facebook.png" width="40"> </a>
             </div>
         </div>
     </section>
