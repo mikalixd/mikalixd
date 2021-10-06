@@ -1,0 +1,80 @@
+.hero.hero-main {
+    background-color: #9DBBF8;
+    color: #1b1b1b;
+    max-height: 760px;
+}
+
+.hero-main h1 {
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: 64px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 44px;
+}
+
+p.body1 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+
+body {
+    --font-size--small: 18px;
+    --font-size--normal: 20px;
+    --font-size--medium: 20px;
+    --font-size--large: 24px;
+    --font-size--huge: 96px;
+    --font-size--extra-small: 16px;
+    --font-size--extra-large: 40px;
+    --font-size--gigantic: 144px;
+}
+
+.section.why-hkbu {
+    background-color: #ECECEC;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-item {
+    height: 50px;
+    width: 150px;
+    line-height: 50px;
+    text-align: center;
+    margin: 5px;
+}
+
+.circle__progress--fill {
+    --initialStroke: 0;
+    --transitionDuration: 0;
+    stroke-opacity: 1;
+    stroke-dasharray: var(--initialStroke);
+    stroke-dashoffset: var(--initialStroke);
+    transition: stroke-dashoffset var(--transitionDuration) ease;
+  }
+
+#copyright {
+    margin: 1% auto 1% 5%;
+}
+
+.huge-font {
+    font-size: var(--font-size--huge);
+}
+
+.columns {
+    display: flex;;
+}
+
+.needhelp{
+    background-color: #ECECEC;
+    border-style: solid;
+}
