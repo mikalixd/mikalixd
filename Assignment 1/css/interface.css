@@ -47,10 +47,10 @@ body {
 
 .flex-item {
     height: 50px;
-    width: 150px;
-    line-height: 50px;
+    width: 100px;
+    /* line-height: 50px; */
     text-align: center;
-    margin: 5px;
+    /* margin: 5px; */
 }
 
 .circle__progress--fill {
