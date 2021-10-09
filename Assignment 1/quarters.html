@@ -22,15 +22,15 @@
                         src="/Assignment 1/pic/quarterlogo.png" width="400">
                     <!-- remain dist with logo -->
                 </a> <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="Navbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> 
+                    data-target="Navbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span>
                     <span> aria-hidden="true"></span> </a></div>
             <div id="Navbar" class="navbar-menu">
                 <div class="navbar-end">
                     <div class="navbar-item has-dropdown is-hoverable">
                         <!-- The Quarters -->
-                        <a href="/Assignment 1/quarters.html" class="navbar-link quarter-option no-underline" data-toggle="dropdown"
-                            role="button" aria-haspopup="true" aria-expanded="false" aria-label="quarter-option"
-                            id="quarter-option">
+                        <a href="/Assignment 1/quarters.html" class="navbar-link quarter-option no-underline"
+                            data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"
+                            aria-label="quarter-option" id="quarter-option">
                             <i class="icon icon-globe"></i>The Quarters<span class="caret"></span>
                         </a>
                         <div class="navbar-dropdown" aria-labelledby="quarter-option">
@@ -51,27 +51,84 @@
         </div>
     </nav>
     <!-- developing -->
-    <section class="why-hkbu section">
-        <div class="flex-container is-centered" >
-            <div class="flex-item">
-                <div class="value" akhi="3">0</div>
-                No. of Towers
+    <p>---</p>
+    <section>
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <!-- Apartments + Carpark + Location -->
+                <div class="tile">
+                    <!-- Apartments + Carpark-->
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-primary">
+                            <p class="title">APARTMENTS</p>
+                            <p class="subtitle">Total 68 apartments, which include:</p>
+                            <div class="flex-container is-centered">
+                                <div class="flex-item">
+                                    <div class="value" akhi="3">0</div>
+                                    <p>100 sq.m.</p>
+                                </div>
+                                <div class="flex-item">
+                                    <div class="value" akhi="28">0</div>
+                                    135 sq.m. ( 3-bedrooms )
+                                </div>
+                                <div class="flex-item">
+                                    <div class="value" akhi="30">0</div>
+                                    150 sq.m. ( 3-bedrooms )
+                                </div>
+                                <div class="flex-item">
+                                    <div class="value" akhi="7">0</div>
+                                    170 sq.m. ( 4-bedrooms )
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">CARPARK</p>
+                            <img src="/Assignment 1/pic/carpark.png">
+                            <div class="content">Total of 85 car parking spaces (60 covered spaces and 25 open spaces)
+                            </div>
+                        </article>
+                    </div>
+                    <!-- Location with Google Map -->
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-info">
+                            <p class="title">LOCATION</p>
+                            <p class="subtitle">22 Sui Wo Road, Fo Tan, Shatin, N.T.</p>
+                            <figure class="image">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.9686386479266!2d114.18740231495624!3d22.392539685275693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340407b51c2f5501%3A0x3251c933a67903ac!2z54Gr54Kt56mX56a-6LevMjLomZ_pppnmuK_mtbjmnIPlpKflrbjogbflk6Hlrr_oiI005bqn!5e0!3m2!1szh-TW!2shk!4v1633762007044!5m2!1szh-TW!2shk"
+                                    width="600" height="450" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+                <!-- Utility -->
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <p class="title">UTILITY</p>
+                        <img src="/Assignment 1/pic/lion_pavilion.png">
+                        <img src="/Assignment 1/pic/lion_pavilion.png">
+
+                    </article>
+                </div>
             </div>
-            <div class="flex-item">
-                <div class="value" akhi="68">0</div>
-                Total of apartments
-            </div>
-            <div class="flex-item">
-                <div class="value" akhi="170">0</div>
-                Largest area
-            </div>
-            <div class="flex-item">
-                <div class="value" akhi="85">0</div>
-                Carpark
+            <!-- Facilities -->
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-success">
+                    <div class="content">
+                        <p class="title">FACILITIES</p>
+                        <img src="/Assignment 1/pic/swimmingpool.png">
+                        <div class="content">Swimming Pool</div>
+                        <img src="/Assignment 1/pic/squashpool.png">
+                        <div class="content">Squash Pool</div>
+                        <img src="/Assignment 1/pic/gymroom.png">
+                        <div class="content">Gym Room</div>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
-    
+
     <section class="copyright">
         <div id="copyright" class="columns">
             <div class="column is-four-fifths">
@@ -80,7 +137,7 @@
             <div class="column"></div>
             <div class="column">
                 <a target="_blank" href="https://www.facebook.com/HongKongBaptistUniversity"><img class="logo"
-                            src="/Assignment 1/pic/facebook.png" width="40"> </a>
+                        src="/Assignment 1/pic/facebook.png" width="40"> </a>
             </div>
         </div>
     </section>
