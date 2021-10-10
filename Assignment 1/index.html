@@ -23,7 +23,7 @@
                         width="400"></a>
                 <!-- remain dist with logo -->
                 <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
-                    data-target="signalNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span> 
+                    data-target="signalNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span> </a>
             </div>
             <div id="signalNavbar" class="navbar-menu">
@@ -139,73 +139,161 @@
             </div>
         </div>
     </section>
-    <!-- Map HK -->
-    <script src="//www.amcharts.com/lib/4/core.js"></script>
-    <script src="//www.amcharts.com/lib/4/maps.js"></script>
-    <script src="//cdn.amcharts.com/lib/4/geodata/hongKongHigh.js"></script>
-    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
-    <div id="chartdiv" style="width:100vw; height:100vh; background-color:AliceBlue;"></div>
-    <script>
-        am4core.useTheme(am4themes_animated);
+    <section class="location">
+    <div class="flex-container">
+        <!-- Styles -->
+        <style>
+            #chartdiv {
+                width: 1000px;
+                height: 300px;
+            }
+        </style>
 
-        var map = am4core.createFromConfig({
-            "geodata": am4geodata_hongKongHigh,
-            "projection": "Mercator",
-            "series": [{
-                "type": "MapPolygonSeries",
-                "useGeodata": true,
-                "data": [
-                    { id: "HK-YT", value: 17.1 },
-                    { id: "HK-YL", value: 42.6 },
-                    { id: "HK-WT", value: 20.1 },
-                    { id: "HK-WC", value: 18.7 },
-                    { id: "HK-TW", value: 14.9 },
-                    { id: "HK-TP", value: 16.3 },
-                    { id: "HK-TM", value: 38.3 },
-                    { id: "HK-ST", value: 14.1 },
-                    { id: "HK-SS", value: 21.3 },
-                    { id: "HK-SO", value: 22.0 },
-                    { id: "HK-SK", value: 17.8 },
-                    { id: "HK-NO", value: 17.6 },
-                    { id: "HK-KU", value: 15.9 },
-                    { id: "HK-KI", value: 23.3 },
-                    { id: "HK-KC", value: 17.5 },
-                    { id: "HK-IS", value: 21.0 },
-                    { id: "HK-EA", value: 18.2 },
-                    { id: "HK-CW", value: 14.5 }],
-                "mapPolygons": {
-                    "tooltipText": "{name}: {value} cases",
-                    "states": {
-                        "hover": {
-                            "properties": {
-                                "fill": "#191970"
-                            }
-                        }
-                    }
-                },
-                // Color the distincts based on their cases
-                "heatRules": [{
-                    "target": "mapPolygons.template",
-                    "property": "fill",
-                    "min": "#CBC3E3",
-                    "max": "#570861",
-                    "dataField": "value"
-                }]
-            }],
-            "titles": [{
-                "text": "Abuse cases A&E attendance by District\n(per 100,000 population)",
-                "fontFamily": "Impact",
-                "fontSize": 25,
-                "fill": "#191970",
-                "align": "left",
-                "paddingTop": 50,
-                "paddingLeft": 150,
-            }],
-            "paddingTop": 50,
-            "paddingBottom": 50,
-        }, "chartdiv", am4maps.MapChart);
+        <!-- Resources -->
+        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
-    </script>
+        <!-- Chart code -->
+        <script>
+            am4core.ready(function () {
+
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+                // Themes end
+
+                /**
+                 * The XYChart for transit schema
+                 */
+
+                // Create chart instance
+                var chart = am4core.create("chartdiv", am4charts.XYChart);
+                chart.padding(0, 0, 0, 0);
+
+                // Fo Tan
+                var title = chart.tooltipContainer.createChild(am4core.Label);
+                title.text = "Fo Tan";
+                title.fill = am4core.color("#00254b");
+                title.fontSize = 15;
+                //title.width = am4core.percent(100);
+                //title.textAlign = "middle";
+                title.x = 355;
+                title.y = 180;
+
+                // Shatin
+                var title = chart.tooltipContainer.createChild(am4core.Label);
+                title.text = "Sha Tin";
+                title.fill = am4core.color("#00254b");
+                title.fontSize = 15;
+                //title.width = am4core.percent(100);
+                //title.textAlign = "middle";
+                title.x = 530;
+                title.y = 180;
+
+                // Tai Wai
+                var title = chart.tooltipContainer.createChild(am4core.Label);
+                title.text = "Tai Wai";
+                title.fill = am4core.color("#00254b");
+                title.fontSize = 15;
+                //title.width = am4core.percent(100);
+                //title.textAlign = "middle";
+                title.x = 715;
+                title.y = 180;
+
+                // Kowloon Tong
+                var title = chart.tooltipContainer.createChild(am4core.Label);
+                title.text = "Kowloon Tong";
+                title.fill = am4core.color("#00254b");
+                title.fontSize = 15;
+                //title.width = am4core.percent(100);
+                //title.textAlign = "middle";
+                title.x = 855;
+                title.y = 180;
+
+                // HKBU
+                var title = chart.tooltipContainer.createChild(am4core.Label);
+                title.text = "HKBU";
+                title.fill = am4core.color("#00254b");
+                title.fontSize = 15;
+                //title.width = am4core.percent(100);
+                //title.textAlign = "middle";
+                title.x = 880;
+                title.y = 220;
+
+                function createAxis(list) {
+                    var axis = list.push(new am4charts.ValueAxis());
+                    axis.min = 0;
+                    axis.max = 100;
+                    axis.strictMinMax = true;
+                    axis.renderer.grid.template.disabled = true;
+                    axis.renderer.labels.template.disabled = true;
+                    axis.renderer.baseGrid.disabled = true;
+                }
+
+                // Create axes
+                createAxis(chart.xAxes);
+                createAxis(chart.yAxes);
+
+                function createLine(name, color, data) {
+                    // Create series
+                    var series = chart.series.push(new am4charts.StepLineSeries());
+                    series.data = data;
+                    series.name = name;
+
+                    // Set up binding to data
+                    series.dataFields.valueX = "x";
+                    series.dataFields.valueY = "y";
+
+                    // Set up appearance
+                    series.stroke = color;
+                    series.strokeWidth = 4;
+                    series.connect = false;
+                    //series.tensionX = 0.5;
+                    //series.tensionY = 0.5;
+
+                    // Set up dash
+                    series.propertyFields.strokeDasharray = "dash";
+
+                    // Add bullets (stations)
+                    var bullet = series.bullets.push(new am4charts.CircleBullet());
+                    bullet.circle.radius = 6;
+                    bullet.circle.fill = am4core.color("#fff");
+                    bullet.circle.stroke = am4core.color("#000");
+                    bullet.circle.strokeWidth = 2;
+                    bullet.circle.tooltipText = "{station}";
+
+                }
+
+                createLine(
+                    "East Rail Line",
+                    am4core.color("#63b9e9"),
+                    [{
+                        station: "Fo Tan",
+                        x: 37,
+                        y: 30
+                    }, {
+                        station: "Sha Tin",
+                        x: 56,
+                        y: 30
+                    }, {
+                        station: "Tai Wai",
+                        x: 74,
+                        y: 30
+                    }, {
+                        station: "Kowloon Tong",
+                        x: 90,
+                        y: 30
+                    }]
+                );
+            });
+        </script>
+
+        <!-- HTML -->
+        <div id="chartdiv"></div>
+    </div>
+    </section>
+    
+
     <!-- Quarter Features (dev)-->
     <section>
         <div class="tile is-ancestor">
@@ -321,20 +409,20 @@
                                 </div>
                             </div>
                             <div class="field">
-                                    <div class="select">
-                                        <select>
-                                            <option>Select your Facility / School</option>
-                                            <option>Faculty of Arts</option>
-                                            <option>School of Business</option>
-                                            <option>Schoo of Chinese Medicine</option>
-                                            <option>School of Communication and Film</option>
-                                            <option>Faculty of Science</option>
-                                            <option>Faculty of Social Science</option>
-                                            <option>Academy of Visual Arts</option>
-                                            <option>School of Continuing Education</option>
-                                            <option>Please select this option if the above not applicable</option>
-                                        </select>
-                                    </div>
+                                <div class="select">
+                                    <select>
+                                        <option>Select your Facility / School</option>
+                                        <option>Faculty of Arts</option>
+                                        <option>School of Business</option>
+                                        <option>Schoo of Chinese Medicine</option>
+                                        <option>School of Communication and Film</option>
+                                        <option>Faculty of Science</option>
+                                        <option>Faculty of Social Science</option>
+                                        <option>Academy of Visual Arts</option>
+                                        <option>School of Continuing Education</option>
+                                        <option>Please select this option if the above not applicable</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="field">
                                 <label class="checkbox mb-4">
