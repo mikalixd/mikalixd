@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <!-- Device width detection for Chrome -->
+    <!-- Device width detection-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <!-- Bulma -->
@@ -15,7 +15,7 @@
 
 <body class="index has-navbar-fixed-top" id="development">
     <!-- Nav Bar -->
-    <script src="/Assignment 1/js/navbar.js"></script>
+    <script src="/Assignment 1/js/interaction.js"></script>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
@@ -141,157 +141,157 @@
     </section>
     <!-- Location -->
     <section class="location">
-    <div class="flex-container">
-        <!-- Styles -->
-        <style>
-            #chartdiv {
-                width: 1000px;
-                height: 300px;
-            }
-        </style>
-
-        <!-- Resources -->
-        <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-        <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-        <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-
-        <!-- Chart code -->
-        <script>
-            am4core.ready(function () {
-
-                // Themes begin
-                am4core.useTheme(am4themes_animated);
-                // Themes end
-
-                /**
-                 * The XYChart for transit schema
-                 */
-
-                // Create chart instance
-                var chart = am4core.create("chartdiv", am4charts.XYChart);
-                chart.padding(0, 0, 0, 0);
-
-                // Fo Tan
-                var title = chart.tooltipContainer.createChild(am4core.Label);
-                title.text = "Fo Tan";
-                title.fill = am4core.color("#00254b");
-                title.fontSize = 15;
-                //title.width = am4core.percent(100);
-                //title.textAlign = "middle";
-                title.x = 355;
-                title.y = 180;
-
-                // Shatin
-                var title = chart.tooltipContainer.createChild(am4core.Label);
-                title.text = "Sha Tin";
-                title.fill = am4core.color("#00254b");
-                title.fontSize = 15;
-                //title.width = am4core.percent(100);
-                //title.textAlign = "middle";
-                title.x = 530;
-                title.y = 180;
-
-                // Tai Wai
-                var title = chart.tooltipContainer.createChild(am4core.Label);
-                title.text = "Tai Wai";
-                title.fill = am4core.color("#00254b");
-                title.fontSize = 15;
-                //title.width = am4core.percent(100);
-                //title.textAlign = "middle";
-                title.x = 715;
-                title.y = 180;
-
-                // Kowloon Tong
-                var title = chart.tooltipContainer.createChild(am4core.Label);
-                title.text = "Kowloon Tong";
-                title.fill = am4core.color("#00254b");
-                title.fontSize = 15;
-                //title.width = am4core.percent(100);
-                //title.textAlign = "middle";
-                title.x = 855;
-                title.y = 180;
-
-                // HKBU
-                var title = chart.tooltipContainer.createChild(am4core.Label);
-                title.text = "HKBU";
-                title.fill = am4core.color("#00254b");
-                title.fontSize = 15;
-                //title.width = am4core.percent(100);
-                //title.textAlign = "middle";
-                title.x = 880;
-                title.y = 220;
-
-                function createAxis(list) {
-                    var axis = list.push(new am4charts.ValueAxis());
-                    axis.min = 0;
-                    axis.max = 100;
-                    axis.strictMinMax = true;
-                    axis.renderer.grid.template.disabled = true;
-                    axis.renderer.labels.template.disabled = true;
-                    axis.renderer.baseGrid.disabled = true;
+        <div class="flex-container">
+            <!-- Styles -->
+            <style>
+                #chartdiv {
+                    width: 1000px;
+                    height: 300px;
                 }
+            </style>
 
-                // Create axes
-                createAxis(chart.xAxes);
-                createAxis(chart.yAxes);
+            <!-- Resources -->
+            <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+            <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+            <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
-                function createLine(name, color, data) {
-                    // Create series
-                    var series = chart.series.push(new am4charts.StepLineSeries());
-                    series.data = data;
-                    series.name = name;
+            <!-- Chart code -->
+            <script>
+                am4core.ready(function () {
 
-                    // Set up binding to data
-                    series.dataFields.valueX = "x";
-                    series.dataFields.valueY = "y";
+                    // Themes begin
+                    am4core.useTheme(am4themes_animated);
+                    // Themes end
 
-                    // Set up appearance
-                    series.stroke = color;
-                    series.strokeWidth = 4;
-                    series.connect = false;
-                    //series.tensionX = 0.5;
-                    //series.tensionY = 0.5;
+                    /**
+                     * The XYChart for transit schema
+                     */
 
-                    // Set up dash
-                    series.propertyFields.strokeDasharray = "dash";
+                    // Create chart instance
+                    var chart = am4core.create("chartdiv", am4charts.XYChart);
+                    chart.padding(0, 0, 0, 0);
 
-                    // Add bullets (stations)
-                    var bullet = series.bullets.push(new am4charts.CircleBullet());
-                    bullet.circle.radius = 6;
-                    bullet.circle.fill = am4core.color("#fff");
-                    bullet.circle.stroke = am4core.color("#000");
-                    bullet.circle.strokeWidth = 2;
-                    bullet.circle.tooltipText = "{station}";
+                    // Fo Tan
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Fo Tan";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 355;
+                    title.y = 180;
 
-                }
+                    // Shatin
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Sha Tin";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 530;
+                    title.y = 180;
 
-                createLine(
-                    "East Rail Line",
-                    am4core.color("#63b9e9"),
-                    [{
-                        station: "Fo Tan",
-                        x: 37,
-                        y: 30
-                    }, {
-                        station: "Sha Tin",
-                        x: 56,
-                        y: 30
-                    }, {
-                        station: "Tai Wai",
-                        x: 74,
-                        y: 30
-                    }, {
-                        station: "Kowloon Tong",
-                        x: 90,
-                        y: 30
-                    }]
-                );
-            });
-        </script>
+                    // Tai Wai
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Tai Wai";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 715;
+                    title.y = 180;
 
-        <!-- HTML -->
-        <div id="chartdiv"></div>
-    </div>
+                    // Kowloon Tong
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Kowloon Tong";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 855;
+                    title.y = 180;
+
+                    // HKBU
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "HKBU";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 880;
+                    title.y = 220;
+
+                    function createAxis(list) {
+                        var axis = list.push(new am4charts.ValueAxis());
+                        axis.min = 0;
+                        axis.max = 100;
+                        axis.strictMinMax = true;
+                        axis.renderer.grid.template.disabled = true;
+                        axis.renderer.labels.template.disabled = true;
+                        axis.renderer.baseGrid.disabled = true;
+                    }
+
+                    // Create axes
+                    createAxis(chart.xAxes);
+                    createAxis(chart.yAxes);
+
+                    function createLine(name, color, data) {
+                        // Create series
+                        var series = chart.series.push(new am4charts.StepLineSeries());
+                        series.data = data;
+                        series.name = name;
+
+                        // Set up binding to data
+                        series.dataFields.valueX = "x";
+                        series.dataFields.valueY = "y";
+
+                        // Set up appearance
+                        series.stroke = color;
+                        series.strokeWidth = 4;
+                        series.connect = false;
+                        //series.tensionX = 0.5;
+                        //series.tensionY = 0.5;
+
+                        // Set up dash
+                        series.propertyFields.strokeDasharray = "dash";
+
+                        // Add bullets (stations)
+                        var bullet = series.bullets.push(new am4charts.CircleBullet());
+                        bullet.circle.radius = 6;
+                        bullet.circle.fill = am4core.color("#fff");
+                        bullet.circle.stroke = am4core.color("#000");
+                        bullet.circle.strokeWidth = 2;
+                        bullet.circle.tooltipText = "{station}";
+
+                    }
+
+                    createLine(
+                        "East Rail Line",
+                        am4core.color("#63b9e9"),
+                        [{
+                            station: "Fo Tan",
+                            x: 37,
+                            y: 30
+                        }, {
+                            station: "Sha Tin",
+                            x: 56,
+                            y: 30
+                        }, {
+                            station: "Tai Wai",
+                            x: 74,
+                            y: 30
+                        }, {
+                            station: "Kowloon Tong",
+                            x: 90,
+                            y: 30
+                        }]
+                    );
+                });
+            </script>
+
+            <!-- HTML -->
+            <div id="chartdiv"></div>
+        </div>
     </section>
     <!-- Quarter Features (dev)-->
     <section id="quarters">
@@ -370,8 +370,44 @@
             </div>
         </div>
     </section>
+    <!-- Application Sessions -->
+    <section>
+        <div class="hero-foot">
+            <!-- Tab -->
+            <nav class="tabs is-boxed is-fullwidth is-large">
+                <div class="container">
+                    <ul>
+                        <li class="tab is-active" onclick="openTab(event,'notresident')"><a>Prospective resident</a>
+                        </li>
+                        <li class="tab" onclick="openTab(event,'existresident')"><a>Current resident</a></li>
+                        <li class="tab" onclick="openTab(event,'Support')"><a>Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- 3 sections content -->
+            <div class="container section">
+                <!-- Incoming resident -->
+                <div id="notresident" class="content-tab">
+                    <p>
+                        Hi noob<br>
+                        You are not our resident.</p>
+                </div>
+                <!-- Existing Resident -->
+                <div id="existresident" class="content-tab" style="display:none">
+                    <p>
+                        Hi my lord<br>
+                        Red pocket</p>
+                </div>
+                <!-- Support -->
+                <div id="Support" class="content-tab" style="display:none">
+                    <p>
+                        Support <br>
+                        See if you want to find me</p>
+                </div>
+            </div>
+    </section>
     <!-- Potential Resident (dev) -->
-    <!-- Apply Now, Pricing -->
+    <!-- Apply Now -->
     <section class="section is-relative is-clipped">
         <div class="is-hidden-touch has-background-info"
             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></div>
