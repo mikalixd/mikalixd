@@ -46,21 +46,12 @@ body {
 }
 
 .flex-item {
-    height: 50px;
-    width: 100px;
+    /* height: 50px;
+    width: 100px; */
     /* line-height: 50px; */
     text-align: center;
     /* margin: 5px; */
 }
-
-.circle__progress--fill {
-    --initialStroke: 0;
-    --transitionDuration: 0;
-    stroke-opacity: 1;
-    stroke-dasharray: var(--initialStroke);
-    stroke-dashoffset: var(--initialStroke);
-    transition: stroke-dashoffset var(--transitionDuration) ease;
-  }
 
 #copyright {
     margin: 1% auto 1% 5%;
@@ -78,3 +69,11 @@ body {
     background-color: #ECECEC;
     border-style: solid;
 }
+
+#support_parties{
+    justify-content: space-around;
+}
+
+.scaled {
+    transform: scale(1.2); /* Equal to scaleX(0.7) scaleY(0.7) */
+  }

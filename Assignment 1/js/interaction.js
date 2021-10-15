@@ -65,3 +65,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// On-duties indicators
+function duties() {
+  var d = new Date();
+  var WD = d.getDay();
+  var HH = d.getHours();
+  var MM = d.getMinutes();
+  var text = "";
+  if (WD = 7) {
+    text = "We're Closed now";
+  }
+  else if (WD = 6) {
+    if (HH <= 12 && H >= 9) {
+      text = "We're Opening now";
+    }
+    else {
+      text = "We're Closed now";
+    }
+  }
+  else {
+    if ((HH >= 9 && HH <= 13) || (HH >= 14 && HH <= 17) || (HH = 17 && MM <= 30)) {
+      text = "We're Opening now";
+    }
+    else {
+      text = "We're Closed now";
+    }
+  }
+  document.getElementById("openingA").innerHTML = text;
+  document.getElementById("openingB").innerHTML = text;
+}

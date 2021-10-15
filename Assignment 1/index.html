@@ -14,7 +14,7 @@
     </style>
 </head>
 
-<body class="index has-navbar-fixed-top" id="development">
+<body class="index has-navbar-fixed-top" id="development" onload="duties()">
     <!-- Nav Bar -->
     <script src="/Assignment 1/js/interaction.js"></script>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
@@ -30,7 +30,6 @@
                 <div class="navbar-end">
                     <a class="navbar-item" href="#development">Development</a>
                     <a class="navbar-item" href="#quarters">The Quarters</a>
-                    <a class="navbar-item" href="/Assignment 1/management.html">Management</a>
                     <a class="navbar-item" href="#usefulinfo">Useful Info</a>
                     <a class="navbar-item" href="mailto://ssq@hkbu.edu.hk">Email Us</a>
                 </div>
@@ -48,7 +47,7 @@
                             Tin Town Centre, the development was occupied by Hong Kong Baptist University (HKBU) in the
                             autumn of 1994. At present, Towers 1, 2 and 3 are used as the staff quarters of the
                             University with a total of 68 units in the three towers.</p>
-                        <p> <br> <a class="applynow button button-white" href="apply.html"> Apply Now! </a></p>
+                        <p> <br> <a class="applynow button button-white" href="#apply"> Apply Now! </a></p>
                     </div>
                     <div class="column mobile-screenshots">
                         <img class="screenshot1" src="/Assignment 1/pic/quarter_image1.png" width="500"
@@ -170,6 +169,16 @@
                     // Create chart instance
                     var chart = am4core.create("chartdiv", am4charts.XYChart);
                     chart.padding(0, 0, 0, 0);
+
+                    // Nearby HKBU
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Only 3 stations to HKBU!";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 30;
+                    title.width = am4core.percent(100);
+                    title.textAlign = "middle";
+                    title.x = 20;
+                    title.y = 50;
 
                     // Fo Tan
                     var title = chart.tooltipContainer.createChild(am4core.Label);
@@ -344,12 +353,92 @@
                         </article>
                     </div>
                 </div>
-                <!-- Utility -->
+                <!-- Stat -->
                 <div class="tile is-parent">
                     <article class="tile is-child notification is-danger">
-                        <p class="title">UTILITY</p>
-                        <img src="/Assignment 1/pic/lion_pavilion.png" width="385">
-                        <img src="/Assignment 1/pic/lion_pavilion.png" width="385">
+                        <p class="title">SATISFACTION RATE</p>
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script>
+                            const labels = ["1", "2", "3", "4","5"]
+                            const data = {
+                                labels: labels,
+                                datasets: [{
+                                    data: [2, 5, 13, 32, 48],
+                                    backgroundColor: [
+                                        'rgb(75, 192, 192)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(153, 102, 255)',
+                                        'rgb(201, 203, 207)',
+                                        'rgb(255, 205, 86)'
+                                    ],
+                                    borderColor: [
+                                        'rgb(75, 192, 192)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(153, 102, 255)',
+                                        'rgb(201, 203, 207)',
+                                        'rgb(255, 205, 86)'
+                                    ],
+                                    borderWidth: 1
+                                }],
+                            };
+                            const config = {
+                                type: 'bar',
+                                data: data,
+                                options: {
+                                    scales: {
+                                        // X-Axis Title
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: "Score",
+                                                font: {
+                                                    size: 18
+                                                },
+                                                padding: 20
+                                            }
+                                        },
+                                        // Y-Axis Title
+                                        y: {
+                                            // Define the range of y-axis and ticks
+                                            suggestedMin: 0,
+                                            suggestedMax: 1.0,
+                                            title: {
+                                                display: true,
+                                                text: "Proportion (%)",
+                                                font: {
+                                                    size: 18
+                                                },
+                                                padding: 20
+                                            },
+                                            ticks: {
+                                                stepSize: 2
+                                            }
+                                        }
+                    
+                                    },
+                                    plugins: {
+                                        title: {
+                                            display: true,
+                                            text: 'High Satisfaction Rate Over 5 Years!',
+                                            font: {
+                                                size: 24
+                                            },
+                                            padding: 20
+                                        },
+                                        legend: {
+                                            display: false
+                                        }
+                                    },
+                                }
+                            };
+                            var myChart = new Chart(
+                                document.getElementById('myChart'),
+                                config
+                            );
+                        </script>
 
                     </article>
                 </div>
@@ -370,14 +459,26 @@
             </div>
         </div>
     </section>
+    <section class="needhelp" id="usefulinfo">
+        <div class="columns is-centered">
+            <div aria-hidden="true" class="column has-text-centered">
+                <h1>Do you need help?</h1>
+                <div aria-hidden="true"></div>
+                <div class="column has-text-centered">
+                    <p><a href="mailto://ssq@hkbu.edu.hk" target="_blank">Contact us!</a></p>
+                    <p><a href="https://buniport.hkbu.edu.hk/" target="_blank">Check out BUNIPORT</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Application Sessions -->
     <section>
         <div class="hero-foot">
-            <!-- Tab -->
+            <!-- 3 Tab -->
             <nav class="tabs is-boxed is-fullwidth is-large">
                 <div class="container">
                     <ul>
-                        <li class="tab is-active" onclick="openTab(event,'notresident')"><a>Prospective resident</a>
+                        <li class="tab is-active" onclick="openTab(event,'notresident')"><a>Incoming resident</a>
                         </li>
                         <li class="tab" onclick="openTab(event,'existresident')"><a>Current resident</a></li>
                         <li class="tab" onclick="openTab(event,'Support')"><a>Support</a></li>
@@ -390,7 +491,7 @@
                 <div id="notresident" class="content-tab">
                     <!-- Potential Resident (dev) -->
                     <!-- Apply Now -->
-                    <section class="section is-relative is-clipped">
+                    <section class="section is-relative is-clipped" id="apply">
                         <div class="is-hidden-touch has-background-info"
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></div>
                         <div class="is-hidden-desktop has-background-info is-fullwidth"
@@ -482,46 +583,39 @@
                 <!-- Support -->
                 <div id="Support" class="content-tab" style="display:none">
                     <section>
-                        <h2>Estates Office</h2>
-                        <p>
-                            Service Provided: Move-in & Out, Household facilities, enquiries and complaints<br>
-                            Location: Room 601, Oen Hall Building, Ho Sin Hang Campus, HKBU<br>
-                            Telephone: +852 3411-5660<br>
-                            Office Hours: <br>
-                        </p>
-                        <h2>Management Office</h2>
-                        <p>
-                            Service: Security, Cleaning, Landscaping, Emergency incident<br>
-                            On-Site Supervisor: Mr. Wong (SINO Property)<br>
-                            Location: Podium Level (1/F) of Tower 1<br>
-                            Telephone: +852 2688-0465<br>
-                            Office Hours: <br>
-                        </p>
-                        <h2>Security Services & Control Room</h2>
-                        <p>
-                            Service: Security, Emergency issues<br>
-                            Location: G/F, Tower 5<br>
-                            Telephone: +852 2688-0473<br>
-                            Office Hours: 24 Hours
-                        </p>
+                        <div class="flex-container" id="support_parties">
+                            <div class="flex-item">
+                                <img src="/Assignment 1/pic/estofficeicon.png" width=120px><br>
+                                <h4>Estates Office</h4><br>
+                                Duties: Move-in & Out, Household facilities, enquiries and complaints<br>
+                                Location: Rm 601, Oen Building, Ho Sin Hang Campus, HKBU<br>
+                                Tel: 3411-5660
+                                <p id="openingA"></p>
+                            </div>
+                            <div class="flex-item">
+                                <img src="/Assignment 1/pic/manofficeicon.png" width=100px><br>
+                                <h4>Management Office</h4><br>
+                                Duties: Security, Cleaning, Landscaping, Emergency Incident<br>
+                                On-Site Supervisor: Mr. Wong (SINO)<br>
+                                Location: Podium Level, Tower 1<br>
+                                2688-0465
+                                <p id="openingB"></p>
+                            </div>
+                            <div class="flex-item">
+                                <img src="/Assignment 1/pic/securityicon.png" width=100px><br>
+                                <h4>Security Services <br>& Control Room</h4><br>
+                                Service: Security, Emergency issues<br>
+                                Location: G/F, Tower 5<br>
+                                2688-0473
+                                <p>24 Hours</p>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </div>
     </section>
     <!-- Existing Resident (dev)-->
     <!-- Estates Office & Management Office & Security Services Control Room -->
-    <section class="needhelp" id="usefulinfo">
-        <div class="columns is-centered">
-            <div aria-hidden="true" class="column has-text-centered">
-                <h1>Do you need help?</h1>
-                <div aria-hidden="true"></div>
-                <div class="column has-text-centered">
-                    <p><a href="mailto://ssq@hkbu.edu.hk" target="_blank">Contact us!</a></p>
-                    <p><a href="https://buniport.hkbu.edu.hk/" target="_blank">Check out BUNIPORT</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Footer -->
     <footer class="copyright">
         <div id="copyright" class="columns">
