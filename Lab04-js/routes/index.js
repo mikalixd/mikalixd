@@ -31,10 +31,18 @@ router.post('/form', function (req, res) {
       header: req.headers,
       body: req.body
   };
-  // Store Data in server-side
+  // Insert Data in server-side
   req.body.numTickets = parseInt(req.body.numTickets);
   db.getCollection("bookings").insert(req.body);
   res.json(response);    
+});
+
+/* Display all Bookings */
+router.get('/bookings', function (req, res) {
+
+  var result = db.getCollection("bookings").find();
+
+  res.render('bookings', { bookings: result });
 });
 
 module.exports = router;
