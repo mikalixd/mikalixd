@@ -12,6 +12,8 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// Extra setting: json with space
+app.set('json spaces', 2);
 
 app.use(logger('dev'));
 app.use(express.json());
