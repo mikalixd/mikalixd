@@ -72,11 +72,11 @@ function duties() {
   var HH = d.getHours();
   var MM = d.getMinutes();
   var text = "";
-  if (WD = 7) {
+  if (WD = 0) {
     text = "We're Closed now";
   }
   else if (WD = 6) {
-    if (HH <= 12 && H >= 9) {
+    if (HH <= 12 && HH >= 9) {
       text = "We're Opening now";
     }
     else {
