@@ -1,6 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
+var path = require('../Lab05/node_modules/path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
