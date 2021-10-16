@@ -27,11 +27,12 @@
                             <input class="input" type="text" placeholder="Text input">
                         </div>
                     </div>
-                    <!-- Username -->
+                    <!-- Number of Tickets -->
                     <div class="field">
-                        <label class="label">Username</label>
+                        <label class="label">Number of Tickets</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input class="input is-success" type="text" placeholder="Text input" value="bulma">
+                            <!-- Number with Max-Min Limit -->
+                            <input class="input is-success" type="number" min=1 max=4>
                             <span class="icon is-small is-left">
                                 <i class="fas fa-user"></i>
                             </span>
@@ -93,6 +94,19 @@
                             <label class="radio">
                                 <input type="radio" name="question">
                                 No
+                            </label>
+                        </div>
+                    </div>
+                    <!-- PayPal & Credit Card Options -->
+                    <div class="field">
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" value="Credit Card">
+                                Pay by Credit Card
+                            </label>
+                            <label class="radio">
+                                <input type="radio" value="Paypal">
+                                Pay by Paypal
                             </label>
                         </div>
                     </div>
