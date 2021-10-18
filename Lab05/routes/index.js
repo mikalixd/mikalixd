@@ -85,4 +85,36 @@ router.get('/bookings/update/:id', function (req, res) {
 
 });
 
+// Updating a single Booking 
+router.post('/bookings/update/:id', function (req, res) {
+
+  let result = db.getCollection("bookings").findOne({ $loki: parseInt(req.params.id) });
+
+  if (!result) return res.status(404).send('Unable to find the requested resource!');
+
+  db.getCollection("bookings").findAndUpdate({ $loki: parseInt(req.params.id) },
+    function (item) {
+      Object.assign(item, req.body)
+    });
+
+  res.send("Booking updated.");
+
+});
+
+/* Searching */
+router.get('/bookings/search', function (req, res) {
+
+  var whereClause = {};
+
+  if (req.query.name) whereClause.name = { $regex: req.query.name };
+
+  var parsedNumTickets = parseInt(req.query.numTickets);
+  if (!isNaN(parsedNumTickets)) whereClause.numTickets = parsedNumTickets;
+
+  let results = db.getCollection("bookings").find(whereClause)
+
+  return res.render('bookings', { bookings: results });
+
+});
+
 module.exports = router;
