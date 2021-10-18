@@ -4,19 +4,20 @@
 <head>
     <!-- Device width detection-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="20432984 Li Cheung Kuk">
+    <meta name="description" content="COMP7270 Assignment 1">
     <meta charset="utf-8">
     <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="/Assignment 1/css/interface.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
     <title>Staff Quarters at Fo Tan</title>
-    <style>
-    </style>
 </head>
 
 <body class="index has-navbar-fixed-top" id="development" onload="duties()">
     <!-- Nav Bar -->
     <script src="/Assignment 1/js/interaction.js"></script>
+    <script src="/Assignment 1/js/form.js"></script>
     <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
         <div class="container">
             <div class="navbar-brand">
@@ -49,12 +50,32 @@
                             University with a total of 68 units in the three towers.</p>
                         <p> <br> <a class="applynow button button-white" href="#apply"> Apply Now! </a></p>
                     </div>
-                    <div class="column mobile-screenshots">
+                    <!-- <div class="column mobile-screenshots">
                         <img class="screenshot1" src="/Assignment 1/pic/quarter_image1.png" width="500"
-                            style="float: right;">
+                            style="float: right;"> -->
+                    <!-- Slideshow container -->
+                    <div class="column" id="slideshow">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 2</div>
+                            <img src="/Assignment 1/pic/quarter_image1.png" style="width:100%">
+                            <div class="text">Scenic View</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 2</div>
+                            <img src="/Assignment 1/pic/quarter_image2.png" style="width:100%">
+                            <div class="text">High Security Level</div>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
+                    <br>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- Introduction Session -->
@@ -138,7 +159,7 @@
             </div>
         </div>
     </section>
-    <!-- Location -->
+    <!-- MTR -->
     <section class="location">
         <div class="flex-container">
             <!-- Styles -->
@@ -362,7 +383,7 @@
                         </div>
                         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                         <script>
-                            const labels = ["1", "2", "3", "4","5"]
+                            const labels = ["1", "2", "3", "4", "5"]
                             const data = {
                                 labels: labels,
                                 datasets: [{
@@ -417,7 +438,7 @@
                                                 stepSize: 2
                                             }
                                         }
-                    
+
                                     },
                                     plugins: {
                                         title: {
@@ -459,6 +480,7 @@
             </div>
         </div>
     </section>
+    <!-- Need Help -->
     <section class="needhelp" id="usefulinfo">
         <div class="columns is-centered">
             <div aria-hidden="true" class="column has-text-centered">
@@ -510,25 +532,22 @@
                                 </div>
                                 <div class="column is-6 is-4-desktop mx-auto">
                                     <div class="box has-background-light has-text-centered">
-                                        <form action="#">
+                                        <form>
                                             <span class="has-text-grey-dark">Registration</span>
                                             <h3 class="mb-5 is-size-4 has-text-weight-bold">Personal information</h3>
                                             <div class="field">
                                                 <div class="control">
-                                                    <input class="input" type="name" placeholder="Name"
-                                                        control-id="ControlID-13">
+                                                    <input class="input" type="name" placeholder="Name" required>
                                                 </div>
                                             </div>
                                             <div class="field">
                                                 <div class="control">
-                                                    <input class="input" type="email" placeholder="E-Mail"
-                                                        control-id="ControlID-14">
+                                                    <input class="input" type="email" placeholder="E-Mail" required>
                                                 </div>
                                             </div>
                                             <div class="field">
                                                 <div class="control">
-                                                    <input class="input" type="contact" placeholder="Contact"
-                                                        control-id="ControlID-15">
+                                                    <input class="input" type="contact" placeholder="Contact" required>
                                                 </div>
                                             </div>
                                             <div class="field">
@@ -550,16 +569,15 @@
                                             </div>
                                             <div class="field">
                                                 <label class="checkbox mb-4">
-                                                    <input class="checkbox mr-2" type="checkbox" name="terms" value="1"
-                                                        control-id="ControlID-16">
+                                                    <input class="checkbox mr-2" type="checkbox" name="terms" value="1">
                                                     <small class="has-text-grey-dark">By signing up, you agree to our <a
-                                                            href="#">Terms,
-                                                            Data Policy</a> and <a href="#">Cookies Policy</a>.</small>
+                                                            href="#">Terms, Data Policy</a> and <a href="#">Cookies
+                                                            Policy</a>.</small>
                                                 </label>
                                             </div>
                                             <div class="control">
                                                 <button class="button is-link py-2 is-fullwidth"
-                                                    control-id="ControlID-17">Submit</button>
+                                                    onclick="formsubmitted()">Submit</button>
                                         </form>
                                     </div>
                                 </div>
@@ -572,11 +590,14 @@
                     <section>
                         <h2>Useful Forms</h2>
                         <p>
-                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/maint-form.doc'>Request for Maintenance/Repair Service Form</a><br>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/maint-form.doc'>Request for Maintenance/Repair
+                                Service Form</a><br>
                             <a href='https://eo.hkbu.edu.hk/ssq1-forms/suggestion-form.doc'>Suggestion Form</a><br>
                             <a href='https://eo.hkbu.edu.hk/ssq1-forms/arrivalkit-form.doc'>Arrival Kit Form</a><br>
-                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/carparklabel-form.doc'>Carpark Label Application Form</a><br>
-                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/clubhousebooking-form.doc'>Booking of Club House for Private Party</a>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/carparklabel-form.doc'>Carpark Label Application
+                                Form</a><br>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/clubhousebooking-form.doc'>Booking of Club House
+                                for Private Party</a>
                         </p>
                     </section>
                 </div>
