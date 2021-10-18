@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Device width detection-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="20432984 Li Cheung Kuk">
+    <meta name="description" content="COMP7270 Assignment 1">
+    <meta charset="utf-8">
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/Assignment 1/css/interface.css">
+
+    <title>Staff Quarters at Fo Tan</title>
+</head>
+
+<body class="index has-navbar-fixed-top" id="development" onload="duties()">
+    <!-- Nav Bar -->
+    <script src="/Assignment 1/js/interaction.js"></script>
+    <script src="/Assignment 1/js/form.js"></script>
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/Assignment 1/index.html"> <img class="logo" src="/Assignment 1/pic/quarterlogo.png"
+                        width="180"></a>
+                <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                    data-target="signalNavbar"> <span aria-hidden="true"></span> <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span> </a>
+            </div>
+            <div id="signalNavbar" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="#development">Development</a>
+                    <a class="navbar-item" href="#quarters">The Quarters</a>
+                    <a class="navbar-item" href="#usefulinfo">Useful Info</a>
+                    <a class="navbar-item" href="mailto:ssq@hkbu.edu.hk">Email Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Frame -->
+    <section class="hero-main hero">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-two-fifths">
+                        <h1>The Development</h1>
+                        <p class="body1">Built upon the hillside of Fo Tan in Sha Tin and overlooking the scenery of Sha
+                            Tin Town Centre, the development was occupied by Hong Kong Baptist University (HKBU) in the
+                            autumn of 1994. At present, Towers 1, 2 and 3 are used as the staff quarters of the
+                            University with a total of 68 units in the three towers.</p>
+                        <p> <br> <a class="applynow button button-white" href="#apply"> Apply Now! </a></p>
+                    </div>
+                    <!-- <div class="column mobile-screenshots">
+                        <img class="screenshot1" src="/Assignment 1/pic/quarter_image1.png" width="500"
+                            style="float: right;"> -->
+                    <!-- Slideshow container -->
+                    <div class="column" id="slideshow">
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 2</div>
+                            <img src="/Assignment 1/pic/quarter_image1.png" style="width:100%">
+                            <div class="text">Scenic View</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 2</div>
+                            <img src="/Assignment 1/pic/quarter_image2.png" style="width:100%">
+                            <div class="text">High Security Level</div>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Introduction Session -->
+    <section class="why-hkbu section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <h2>Features of our Quarters</h2>
+                    <p class="body1">See if any attracts you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Four Reason -->
+    <section class="four-reason">
+        <!-- Four options -->
+        <div class="column is-centered">
+            <div class="section" style="color: black; margin-top: 20px; border-bottom: 1px solid lightgrey;">
+                <div class="container">
+                    <div class="item columns">
+                        <!-- Location -->
+                        <div class="column is-3" style="border: 0px solid red;">
+                            <p style="text-align: center; font-size: 35px;">
+                                <img class="logo" src="/Assignment 1/pic/pin.jpg" width="100">
+                            </p>
+
+                            <p class="item-title" style="text-align: center; margin-top: 10px;">
+                                <span style="font-weight: bold;">Location</span>
+                            </p>
+
+                            <p style="text-align: center; margin-top: 10px;">
+                                22 Sui Wo Road, Fo Tan, Shatin, N.T.
+                            </p>
+
+                        </div>
+                        <!-- Scenery -->
+                        <div class="column is-3" style="border: 0px solid red;">
+                            <p style="text-align: center; font-size: 35px;">
+                                <img class="logo" src="/Assignment 1/pic/scenic.png" width="100">
+                            </p>
+
+                            <p class="item-title" style="text-align: center; margin-top: 10px;">
+                                <span style="font-weight: bold;">Scenery</span>
+                            </p>
+
+                            <p style="text-align: center; margin-top: 10px;">
+                                Scenery of Shatin Town Center
+                            </p>
+                        </div>
+                        <!-- Facility -->
+                        <div class="column is-3" style="border: 0px solid red;">
+                            <p style="text-align: center; font-size: 35px;">
+                                <img class="logo" src="/Assignment 1/pic/facility.png" width="100">
+                            </p>
+
+                            <p class="item-title" style="text-align: center; margin-top: 10px;">
+                                <span style="font-weight: bold;">Facility</span>
+                            </p>
+
+                            <p style="text-align: center; margin-top: 10px;">
+                                Full of facility and carpark
+                            </p>
+                        </div>
+                        <!-- Close to BU -->
+                        <div class="column is-3" style="border: 0px solid red;">
+                            <p style="text-align: center; font-size: 35px;">
+                                <img class="logo" src="/Assignment 1/pic/school.png" width="100">
+                            </p>
+
+                            <p class="item-title" style="text-align: center; margin-top: 10px;">
+                                <span style="font-weight: bold;">Close to BU</span>
+                            </p>
+
+                            <p style="text-align: center; margin-top: 10px;">
+                                Only 3 stations travelling through MTR
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MTR -->
+    <section class="location">
+        <div class="flex-container">
+            <!-- Styles -->
+            <style>
+                #chartdiv {
+                    width: 1000px;
+                    height: 300px;
+                }
+            </style>
+
+            <!-- Resources -->
+            <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+            <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+            <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+            <!-- Chart code -->
+            <script>
+                am4core.ready(function () {
+
+                    // Themes begin
+                    am4core.useTheme(am4themes_animated);
+                    // Themes end
+
+                    /**
+                     * The XYChart for transit schema
+                     */
+
+                    // Create chart instance
+                    var chart = am4core.create("chartdiv", am4charts.XYChart);
+                    chart.padding(0, 0, 0, 0);
+
+                    // Nearby HKBU
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Only 3 stations to HKBU!";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 30;
+                    title.width = am4core.percent(100);
+                    title.textAlign = "middle";
+                    title.x = 20;
+                    title.y = 50;
+
+                    // Fo Tan
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Fo Tan";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 355;
+                    title.y = 180;
+
+                    // Shatin
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Sha Tin";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 530;
+                    title.y = 180;
+
+                    // Tai Wai
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Tai Wai";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 715;
+                    title.y = 180;
+
+                    // Kowloon Tong
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "Kowloon Tong";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 855;
+                    title.y = 180;
+
+                    // HKBU
+                    var title = chart.tooltipContainer.createChild(am4core.Label);
+                    title.text = "HKBU";
+                    title.fill = am4core.color("#00254b");
+                    title.fontSize = 15;
+                    //title.width = am4core.percent(100);
+                    //title.textAlign = "middle";
+                    title.x = 880;
+                    title.y = 220;
+
+                    function createAxis(list) {
+                        var axis = list.push(new am4charts.ValueAxis());
+                        axis.min = 0;
+                        axis.max = 100;
+                        axis.strictMinMax = true;
+                        axis.renderer.grid.template.disabled = true;
+                        axis.renderer.labels.template.disabled = true;
+                        axis.renderer.baseGrid.disabled = true;
+                    }
+
+                    // Create axes
+                    createAxis(chart.xAxes);
+                    createAxis(chart.yAxes);
+
+                    function createLine(name, color, data) {
+                        // Create series
+                        var series = chart.series.push(new am4charts.StepLineSeries());
+                        series.data = data;
+                        series.name = name;
+
+                        // Set up binding to data
+                        series.dataFields.valueX = "x";
+                        series.dataFields.valueY = "y";
+
+                        // Set up appearance
+                        series.stroke = color;
+                        series.strokeWidth = 4;
+                        series.connect = false;
+                        //series.tensionX = 0.5;
+                        //series.tensionY = 0.5;
+
+                        // Set up dash
+                        series.propertyFields.strokeDasharray = "dash";
+
+                        // Add bullets (stations)
+                        var bullet = series.bullets.push(new am4charts.CircleBullet());
+                        bullet.circle.radius = 6;
+                        bullet.circle.fill = am4core.color("#fff");
+                        bullet.circle.stroke = am4core.color("#000");
+                        bullet.circle.strokeWidth = 2;
+                        bullet.circle.tooltipText = "{station}";
+
+                    }
+
+                    createLine(
+                        "East Rail Line",
+                        am4core.color("#63b9e9"),
+                        [{
+                            station: "Fo Tan",
+                            x: 37,
+                            y: 30
+                        }, {
+                            station: "Sha Tin",
+                            x: 56,
+                            y: 30
+                        }, {
+                            station: "Tai Wai",
+                            x: 74,
+                            y: 30
+                        }, {
+                            station: "Kowloon Tong",
+                            x: 90,
+                            y: 30
+                        }]
+                    );
+                });
+            </script>
+
+            <!-- HTML -->
+            <div id="chartdiv"></div>
+        </div>
+    </section>
+    <!-- Quarter Features (dev)-->
+    <section id="quarters">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-8">
+                <!-- Apartments + Carpark + Location -->
+                <div class="tile">
+                    <!-- Apartments + Carpark-->
+                    <div class="tile is-parent is-vertical">
+                        <article class="tile is-child notification is-primary">
+                            <p class="title">APARTMENTS</p>
+                            <p class="subtitle">Total 68 apartments, which include:</p>
+                            <div class="flex-container is-centered">
+                                <div class="flex-item">
+                                    <div class="value" akhi="3">0</div>
+                                    <p>100 sq.m.</p>
+                                </div>
+                                <div class="flex-item">
+                                    <div class="value" akhi="28">0</div>
+                                    135 sq.m.
+                                </div>
+                                <div class="flex-item">
+                                    <div class="value" akhi="30">0</div>
+                                    150 sq.m.
+                                </div>
+                                <div class="flex-item">
+                                    <div class="value" akhi="7">0</div>
+                                    170 sq.m.
+                                </div>
+                            </div>
+                        </article>
+                        <article class="tile is-child notification is-warning">
+                            <p class="title">LOCATION</p>
+                            <p class="subtitle">22 Sui Wo Road, Fo Tan, Shatin, N.T.</p>
+                            <figure class="image">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.9686386479266!2d114.18740231495624!3d22.392539685275693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x340407b51c2f5501%3A0x3251c933a67903ac!2z54Gr54Kt56mX56a-6LevMjLomZ_pppnmuK_mtbjmnIPlpKflrbjogbflk6Hlrr_oiI005bqn!5e0!3m2!1szh-TW!2shk!4v1633762007044!5m2!1szh-TW!2shk"
+                                    width="400" height="250" style="border:0;" allowfullscreen=""
+                                    loading="lazy"></iframe>
+                        </article>
+                    </div>
+                    <!-- Location with Google Map -->
+                    <div class="tile is-parent">
+                        <article class="tile is-child notification is-info">
+                            <p class="title">CARPARK</p>
+                            <img src="/Assignment 1/pic/carpark.png">
+                            <div class="content">Total of 85 car parking spaces (60 covered spaces and 25 open spaces)
+                            </div>
+                            </figure>
+                        </article>
+                    </div>
+                </div>
+                <!-- Stat -->
+                <div class="tile is-parent">
+                    <article class="tile is-child notification is-danger">
+                        <p class="title">SATISFACTION RATE</p>
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script>
+                            const labels = ["1", "2", "3", "4", "5"]
+                            const data = {
+                                labels: labels,
+                                datasets: [{
+                                    data: [2, 5, 13, 32, 48],
+                                    backgroundColor: [
+                                        'rgb(75, 192, 192)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(153, 102, 255)',
+                                        'rgb(201, 203, 207)',
+                                        'rgb(255, 205, 86)'
+                                    ],
+                                    borderColor: [
+                                        'rgb(75, 192, 192)',
+                                        'rgb(54, 162, 235)',
+                                        'rgb(153, 102, 255)',
+                                        'rgb(201, 203, 207)',
+                                        'rgb(255, 205, 86)'
+                                    ],
+                                    borderWidth: 1
+                                }],
+                            };
+                            const config = {
+                                type: 'bar',
+                                data: data,
+                                options: {
+                                    scales: {
+                                        // X-Axis Title
+                                        x: {
+                                            title: {
+                                                display: true,
+                                                text: "Score",
+                                                font: {
+                                                    size: 18
+                                                },
+                                                padding: 20
+                                            }
+                                        },
+                                        // Y-Axis Title
+                                        y: {
+                                            // Define the range of y-axis and ticks
+                                            suggestedMin: 0,
+                                            suggestedMax: 1.0,
+                                            title: {
+                                                display: true,
+                                                text: "Proportion (%)",
+                                                font: {
+                                                    size: 18
+                                                },
+                                                padding: 20
+                                            },
+                                            ticks: {
+                                                stepSize: 2
+                                            }
+                                        }
+
+                                    },
+                                    plugins: {
+                                        title: {
+                                            display: true,
+                                            text: 'High Satisfaction Rate Over 5 Years!',
+                                            font: {
+                                                size: 24
+                                            },
+                                            padding: 20
+                                        },
+                                        legend: {
+                                            display: false
+                                        }
+                                    },
+                                }
+                            };
+                            var myChart = new Chart(
+                                document.getElementById('myChart'),
+                                config
+                            );
+                        </script>
+
+                    </article>
+                </div>
+            </div>
+            <!-- Facilities -->
+            <div class="tile is-parent">
+                <article class="tile is-child notification is-success">
+                    <div class="content">
+                        <p class="title">FACILITIES</p>
+                        <img src="/Assignment 1/pic/swimmingpool.png">
+                        <div class="content">Swimming Pool</div>
+                        <img src="/Assignment 1/pic/squashpool.png">
+                        <div class="content">Squash Pool</div>
+                        <img src="/Assignment 1/pic/gymroom.png">
+                        <div class="content">Gym Room</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Need Help -->
+    <section class="needhelp" id="usefulinfo">
+        <div class="columns is-centered">
+            <div aria-hidden="true" class="column has-text-centered">
+                <h1>Do you need help?</h1>
+                <div aria-hidden="true"></div>
+                <div class="column has-text-centered">
+                    <p><a href="mailto:ssq@hkbu.edu.hk" target="_blank">Contact us!</a></p>
+                    <p><a href="https://buniport.hkbu.edu.hk/" target="_blank">Check out BUNIPORT</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Application Sessions -->
+    <section>
+        <div class="hero-foot">
+            <!-- 3 Tab -->
+            <nav class="tabs is-boxed is-fullwidth is-large">
+                <div class="container">
+                    <ul>
+                        <li class="tab is-active" onclick="openTab(event,'notresident')"><a>Incoming resident</a>
+                        </li>
+                        <li class="tab" onclick="openTab(event,'existresident')"><a>Current resident</a></li>
+                        <li class="tab" onclick="openTab(event,'Support')"><a>Support</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- 3 sections content -->
+            <div class="container section">
+                <!-- Incoming resident -->
+                <div id="notresident" class="content-tab">
+                    <!-- Potential Resident (dev) -->
+                    <!-- Apply Now -->
+                    <section class="section is-relative is-clipped" id="apply">
+                        <div class="is-hidden-touch has-background-info"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></div>
+                        <div class="is-hidden-desktop has-background-info is-fullwidth"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%"></div>
+                        <div class="container mx-auto is-relative">
+                            <div class="is-vcentered columns is-multiline">
+                                <div class="column is-6 is-5-desktop mb-5">
+                                    <div>
+                                        <h2 class="has-text-white mb-4 is-size-1 is-size-3-mobile has-text-weight-bold">
+                                            Complete the
+                                            Application Form below.</h2>
+                                        <p class="has-text-white mb-0">We will require additional documentation in
+                                            support of your
+                                            application - Contact us Today!</p>
+                                    </div>
+                                </div>
+                                <div class="column is-6 is-4-desktop mx-auto">
+                                    <div class="box has-background-light has-text-centered">
+                                        <form>
+                                            <span class="has-text-grey-dark">Registration</span>
+                                            <h3 class="mb-5 is-size-4 has-text-weight-bold">Personal information</h3>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input class="input" type="name" placeholder="Name" required>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input class="input" type="email" placeholder="E-Mail" required>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="control">
+                                                    <input class="input" type="contact" placeholder="Contact" required>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <div class="select">
+                                                    <select>
+                                                        <option>Select your Facility / School</option>
+                                                        <option>Faculty of Arts</option>
+                                                        <option>School of Business</option>
+                                                        <option>Schoo of Chinese Medicine</option>
+                                                        <option>School of Communication and Film</option>
+                                                        <option>Faculty of Science</option>
+                                                        <option>Faculty of Social Science</option>
+                                                        <option>Academy of Visual Arts</option>
+                                                        <option>School of Continuing Education</option>
+                                                        <option>Please select this option if the above not applicable
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label class="checkbox mb-4">
+                                                    <input class="checkbox mr-2" type="checkbox" name="terms" value="1">
+                                                    <small class="has-text-grey-dark">By signing up, you agree to our <a
+                                                            href="#">Terms, Data Policy</a> and <a href="#">Cookies
+                                                            Policy</a>.</small>
+                                                </label>
+                                            </div>
+                                            <div class="control">
+                                                <button class="button is-link py-2 is-fullwidth"
+                                                    onclick="formsubmitted()">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Existing Resident -->
+                <div id="existresident" class="content-tab" style="display:none">
+                    <section>
+                        <h2>Useful Forms</h2>
+                        <p>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/maint-form.doc'>Request for Maintenance/Repair
+                                Service Form</a><br>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/suggestion-form.doc'>Suggestion Form</a><br>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/arrivalkit-form.doc'>Arrival Kit Form</a><br>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/carparklabel-form.doc'>Carpark Label Application
+                                Form</a><br>
+                            <a href='https://eo.hkbu.edu.hk/ssq1-forms/clubhousebooking-form.doc'>Booking of Club House
+                                for Private Party</a>
+                        </p>
+                    </section>
+                </div>
+                <!-- Support -->
+                <div id="Support" class="content-tab" style="display:none">
+                    <section>
+                        <div class="flex-container" id="support_parties">
+                            <div class="flex-item">
+                                <img src="/Assignment 1/pic/estofficeicon.png" width=120px><br>
+                                <h4>Estates Office</h4><br>
+                                Duties: Move-in & Out, Household facilities, enquiries and complaints<br>
+                                Location: Rm 601, Oen Building, Ho Sin Hang Campus, HKBU<br>
+                                Tel: 3411-5660
+                                <p id="openingA"></p>
+                            </div>
+                            <div class="flex-item">
+                                <img src="/Assignment 1/pic/manofficeicon.png" width=100px><br>
+                                <h4>Management Office</h4><br>
+                                Duties: Security, Cleaning, Landscaping, Emergency Incident<br>
+                                On-Site Supervisor: Mr. Wong (SINO)<br>
+                                Location: Podium Level, Tower 1<br>
+                                2688-0465
+                                <p id="openingB"></p>
+                            </div>
+                            <div class="flex-item">
+                                <img src="/Assignment 1/pic/securityicon.png" width=100px><br>
+                                <h4>Security Services <br>& Control Room</h4><br>
+                                Service: Security, Emergency issues<br>
+                                Location: G/F, Tower 5<br>
+                                2688-0473
+                                <p>24 Hours</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </section>
+    <!-- Existing Resident (dev)-->
+    <!-- Estates Office & Management Office & Security Services Control Room -->
+    <!-- Footer -->
+    <footer class="copyright">
+        <div id="copyright" class="columns">
+            <div class="column is-four-fifths">
+                © 2021 Hong Kong Baptist University
+            </div>
+            <div class="column"></div>
+            <div class="column">
+                <a target="_blank" href="https://www.facebook.com/HongKongBaptistUniversity"><img class="logo"
+                        src="/Assignment 1/pic/facebook.png" width="40"> </a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

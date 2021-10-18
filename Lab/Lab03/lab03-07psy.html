@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>lab #03-07 Psy</title>
+    <style>
+        body {
+            font: 1em ".AppleSystemUIFont", Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="//www.amcharts.com/lib/4/core.js"></script>
+    <script src="//www.amcharts.com/lib/4/charts.js"></script>
+    <script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/kelly.js"></script>
+
+    <div id="chartdiv" style="width:40vw; height:80vh;"></div>
+    <script src="js/svgPaths.js"></script>
+
+    <script>
+        am4core.useTheme(am4themes_kelly); //am4themes_animated [colortheme]
+        var chart = am4core.createFromConfig({
+            "titles": [{
+                "text": "Hallyu that interests foreigners overseas",
+                "fontSize": 20,
+                "marginTop": 20,
+                "marginBottom": 20
+            }],
+            "data": [{
+                "name": "TV Drama",
+                "value": 33.2
+            }, {
+                "name": "Film",
+                "value": 6.2
+            }, {
+                "name": "K-POP",
+                "value": 53.3
+            }, {
+                "name": "Others",
+                "value": 7.1
+            }],
+            "series": [{
+                "type": "PictorialStackedSeries",
+                "dataFields": {
+                    "value": "value",
+                    "category": "name"
+                },
+                "maskSprite": {
+                    "path": psyPath,
+                    "rotation": 180
+                },
+                "alignLabels": true,
+            }],
+        }, "chartdiv", am4charts.SlicedChart);
+    </script>
+</body>
+
+</html>

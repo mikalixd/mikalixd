@@ -1,0 +1,24 @@
+Assignment 1: Website Revamp
+In this assignment, you are going to revamp the following website:
+https://eo.hkbu.edu.hk/ssq-home/
+
+Three major requirements of this revamp exercise are discussed below:
+
+1. Responsive Web Design & Mobile Friendliness
+The current website is not responsive, content looks too small on mobile devices.
+Flash animation is no longer supported on mobile devices and modern browsers.
+We should leverage the responsive grid system and styling from the Bulma CSS library.
+2. One-Page Website
+The website is unorganized and lacking focus. There are many pages with very little content.
+We should adopt the one-page website design.
+A One Pager is a Single Page website with no additional pages like About, Team or Services. All the content sits within the same webpage, traditionally in a long-scrolling layout. See the beauty of a One Page website is it tries to promote one thing in an uncluttered, direct manner.
+
+Reference: https://onepagelove.com/what-is-a-one-page-website
+3. Data Visualization
+There are some numerical figures on the website but we may need a better presentation.
+We should develop some data visualizations with Chart.js or amCharts.
+Final Remarks
+You are not limited to the content as provided on the current website. You can use extra content whenever you find it useful and meaningful.
+Your work will be evaluated with Google Chrome or Safari.
+The web content should be decomposed into coherent and reusable units(.html, .css, .js or images) and structure(folder).
+Submit your zip file to BUmoodle on or before Oct 16, 6:30 pm.
