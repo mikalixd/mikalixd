@@ -71,6 +71,7 @@ router.post('/bookings/delete/:id', function (req, res) {
   db.getCollection("bookings").remove(result);
   
   // res.send("Booking deleted.");
+  // Redirect -> Bookings
   res.redirect("/bookings");
    
 });
