@@ -117,4 +117,20 @@ router.get('/bookings/search', function (req, res) {
 
 });
 
+/* Pagination in DB Query 分頁*/
+router.get('/bookings/paginate', function (req, res) {
+
+  // Limit: Control record to return; Offset: How many record would be skip
+  // Nah will be return if limit not provided
+  var count = Math.max(req.query.limit, 2) || 2;
+  var start = Math.max(req.query.offset, 0) || 0;
+
+  var results = db.getCollection("bookings").chain().find({}).offset(start).limit(count).data();
+
+  var totalNumRecords = db.getCollection("bookings").count();
+
+  return res.render('paginate', { bookings: results, numOfRecords: totalNumRecords });
+
+});
+
 module.exports = router;
