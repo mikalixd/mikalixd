@@ -21,7 +21,8 @@
             <div class="columns">
                 <!-- Form Method, Action -->
                 <!-- Name parameter: provide info to POST -->
-                <form class="column is-one-third" method="POST" action="/form">
+                <!-- If no [return:false], will cancel regular form submission -->
+                <form class="column is-one-third" method="POST" action="/form" onsubmit="postData(this);return false;">
                     <!-- Name -->
                     <div class="field">
                         <label class="label">Name</label>
@@ -47,7 +48,8 @@
                     <div class="field">
                         <label class="label">Email</label>
                         <div class="control has-icons-left has-icons-right">
-                            <input name="email" class="input is-danger" type="email" placeholder="Email input" value="hello@">
+                            <input name="email" class="input is-danger" type="email" placeholder="Email input"
+                                value="hello@">
                             <span class="icon is-small is-left">
                                 <i class="fas fa-envelope"></i>
                             </span>
@@ -150,6 +152,26 @@
                 superheroElem.disabled = false;
             } else {
                 superheroElem.disabled = true;
+            }
+        }
+        // PostData JS [AJAX]
+        async function postData(elem) {
+
+            var response = await fetch('https://httpbin.org/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(new FormData(elem))
+            });
+
+            console.log(response);
+
+            if (response.ok) {
+                var data = await response.json();
+                alert(JSON.stringify(data));
+            } else {
+                alert(response.status + " " + response.statusCode);
             }
         }
 
