@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+// Lokijs import
 var loki = require('lokijs');
 
 var db = new loki('data.json', {
@@ -32,6 +33,7 @@ router.post('/form', function (req, res) {
       body: req.body
   };
   // Insert Data in server-side
+  // Ensure only number is insert into DB; If not number, NaN will be inserted
   req.body.numTickets = parseInt(req.body.numTickets);
   db.getCollection("bookings").insert(req.body);
   res.json(response);    
