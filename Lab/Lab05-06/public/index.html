@@ -157,8 +157,8 @@
         // PostData JS [AJAX]
         async function postData(elem) {
 
-            var response = await fetch('https://httpbin.org/post', {
-                method: 'POST',
+            var response = await fetch(elem.action, {
+                method: elem.method,
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
