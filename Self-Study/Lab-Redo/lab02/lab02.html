@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Lab #2</title>
+    <style>
+        .flex-item {
+            background-color: lightsalmon;
+            height: 50px;
+            width: 150px;
+            line-height: 50px;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .flex-container {
+            display: flex;
+            /* Spread the blcking evenly */
+            justify-content: space-around;
+            /* Can rendered at other row */
+            flex-wrap: wrap
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Flex-Item -->
+    <section>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item" style="flex-grow: 3">3</div>
+            <div class="flex-item">4</div>
+        </div>
+    </section>
+    <!-- Bulma -->
+    <section class="section">
+        <div class="container">
+            <!-- Bulma: Class name with "is-mobile" = lock all display pattern in horizonal
+                 Bulma: Class name with "is-multiline" = move to other rows when crowded
+                 Bulma: Class name with "is-half-mobile" = occupy only half when mobile -->
+            <div class="columns is-half-mobile is-multiline">
+                <div class="column card">
+                    Card 1
+                </div>
+                <div class="column card">
+                    Card 2
+                </div>
+                <div class="column card">
+                    Card 3
+                </div>
+                <div class="column card">
+                    Card 4
+                </div>
+            </div>
+            <div class="columns is-mobile is-multiline">
+                <div class="column is-half-mobile card">
+                    <figure class="image is-square">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum1/500/500" />
+                    </figure>
+                </div>
+                <div class="column is-half-mobile card">
+                    <figure class="image is-3by4">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum5/500/1500" />
+                    </figure>
+                </div>
+                <div class="column is-half-mobile card">
+                    <figure class="image is-4by3">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum2/1500/500" />
+                    </figure>
+                </div>
+                <div class="column is-half-mobile card">
+                    <figure class="image is-square">
+                        <img style="object-fit:cover" src="https://picsum.photos/seed/picsum4/500/500" />
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <section class="section">
+        <div class="container">
+            <div class="buttons">
+                <button class="button is-primary" onclick="btn1Clicked(this)">
+                    I'm Button 1, Click me!
+                </button>
+                <button class="button is-warning is-light" onclick="btn2Clicked(this)">
+                    I'm Button 2, Click me!
+                </button>
+                <button class="button is-primary is-outlined" onclick="btn3Clicked()">
+                    I'm Button 3, Click me!
+                </button>
+                <button class="button is-warning is-inverted" onclick="btn4Clicked()">
+                    I'm Button 4, Click me!
+                </button>
+                <button class="button is-primary is-outlined is-rounded" onclick="btn5Clicked()">
+                    I'm Button 5, Click me!
+                </button>
+                <button class="button is-warning is-rounded" onclick="btn6Clicked()">
+                    I'm Button 6, Click me!
+                </button>
+            </div>
+        </div>
+    </section>
+    <img id="pic" style="float:right" src="https://picsum.photos/id/326/150/150" />
+    <div id="rack"></div>
+    <script>
+        function btn1Clicked(elem) {
+            console.log("console output");
+            elem.innerHTML = "Don't click me!";
+        }
+        function btn2Clicked(elem) {
+            elem.style.display = "none"; //Hidden
+            elem.parentNode.classList.add("are-medium"); //Assign with parent class "are-medium" -> Enlarged
+        }
+        function btn3Clicked() {
+            var pic = document.getElementById("pic");
+            if (pic.style.float == "left") {
+                pic.style.float = "right";
+            } else {
+                pic.style.float = "left";
+            }
+        }
+        function btn4Clicked() {
+            var size = {
+                width: 480,
+                height: 360
+            };
+            document.getElementById("pic").src
+                = "https://picsum.photos/id/326/" + size.width + "/" + size.height;
+        }
+        function btn5Clicked() {
+            var figures = document.querySelectorAll(".is-square, .is-16by9");
+            console.log(figures.length);
+            figures.forEach(function (figure) {
+                figure.classList.toggle("is-square");
+                figure.classList.toggle("is-16by9");
+            });
+        };
+        function btn6Clicked() {
+            var dynamicCode = '<table class="table is-bordered is-striped">';
+            var teamMembers = ["Martin", "Kenny", "Tony"];
+            teamMembers.forEach(function (member) {
+                dynamicCode += "<tr><td>" + member + "</td></tr>";
+            });
+            document.querySelector("#rack").innerHTML = dynamicCode + "</table>";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+th {
+    width: 50px;
+    background-color: lightsteelblue;
+}
+
+td {
+    height: 40px;
+
+    border-style: solid;
+    border-width: thin;
+    border-color: darkgray;
+        
+    text-align: right;
+    vertical-align: top;
+}
+
+/* Table element share borders */
+table {
+    border-collapse: collapse;
+}
+
+caption {
+    color: darkmagenta;
+    text-transform: uppercase;
+    
+    font-family: Arial;
+    font-weight: 900;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+
+	float: right;
+	margin: 5px 15px;
+}
+
+/* Class Selector */
+.sundays {
+    color: firebrick;
+}
+
+/* ID Selector */
+#bookmark {
+    text-align: center;
+}
