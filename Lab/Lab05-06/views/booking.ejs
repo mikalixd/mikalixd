@@ -1,0 +1,34 @@
+<%= booking.name %>, <%= booking.numTickets %>
+
+<!-- Old -->
+<!-- <form action="/bookings/delete/<%= booking.$loki %>" method="POST">
+    <button type="submit">Delete</button>
+</form> -->
+
+<button type="button" class="button is-danger" onclick="deleteBooking('<%= booking.$loki %>')">Delete</button>
+
+<script>
+    async function deleteBooking(id) {
+        // Confirm box = Cancel->F, OK->T
+        var r = confirm("Confirm Delete?");
+
+        if (r) {
+            // Fetch API (in-library)
+            var response = await fetch("/bookings/delete/" + id, {
+                method: "POST"
+            });
+
+            if (response.ok) {
+                // var html = await response.text();
+                // alert(html);
+                alert("Booking deleted.");
+                location.assign("/bookings");
+            } else {
+                alert(response.status + ": " + response.statusText);
+            }
+
+        } else {
+            alert("cancelled");
+        }
+    };
+</script>
