@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-// Lokijs import
+// Lokijs init - import
 var loki = require('lokijs');
 
 var db = new loki('data.json', {
@@ -25,7 +25,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Expresso' });
 });
 
-/* Handle the Form */
+/* Handle the Form POST */
 router.post('/form', function (req, res) {
 
   var response = {
@@ -33,17 +33,16 @@ router.post('/form', function (req, res) {
       body: req.body
   };
   // Insert Data in server-side
-  // Ensure only number is insert into DB; If not number, NaN will be inserted
+  // Ensure only number is insert into DB; If not number, NaN will be inserted  
   req.body.numTickets = parseInt(req.body.numTickets);
   db.getCollection("bookings").insert(req.body);
   res.json(response);    
 });
 
 /* Display all Bookings */
+// Route to booking.ejs; Retrieve all data (DB -> result[var] -> bookings.ejs[render])
 router.get('/bookings', function (req, res) {
-
   var result = db.getCollection("bookings").find();
-
   res.render('bookings', { bookings: result });
 });
 
