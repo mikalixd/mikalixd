@@ -153,4 +153,24 @@ router.get('/bookings/aginate', function (req, res) {
 }
 });
 
+//VueJS
+router.get("/bookings/vaginate", function (req, res) {
+  // 'Accept' to check AJAX or not
+  if (req.get('Accept').indexOf('html') === -1) {
+
+    var count = Math.max(req.query.limit, 2) || 2;
+    var start = Math.max(req.query.offset, 0) || 0;
+
+    var results = db.getCollection("bookings").chain().find({}).offset(start).limit(count).data();
+
+    return res.json(results);
+
+} else {
+
+    var totalNumRecords = db.getCollection("bookings").count();
+
+    return res.render('vaginate', { numOfRecords: totalNumRecords });
+}
+});
+
 module.exports = router;
