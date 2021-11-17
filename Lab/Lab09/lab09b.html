@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Abuse cases A&E attendance, Simple Circle Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <svg width="800" height="480">
+        <circle cx="150" cy="120" r="30"></circle>
+        <circle cx="250" cy="120" r="30"></circle>
+        <circle cx="350" cy="120" r="30"></circle>
+        <circle cx="450" cy="120" r="30"></circle>
+        <circle cx="550" cy="120" r="30"></circle>
+        <circle cx="650" cy="120" r="30"></circle>
+
+        <circle cx="150" cy="240" r="30"></circle>
+        <circle cx="250" cy="240" r="30"></circle>
+        <circle cx="350" cy="240" r="30"></circle>
+        <circle cx="450" cy="240" r="30"></circle>
+        <circle cx="550" cy="240" r="30"></circle>
+        <circle cx="650" cy="240" r="30"></circle>
+
+        <circle cx="150" cy="360" r="30"></circle>
+        <circle cx="250" cy="360" r="30"></circle>
+        <circle cx="350" cy="360" r="30"></circle>
+        <circle cx="450" cy="360" r="30"></circle>
+        <circle cx="550" cy="360" r="30"></circle>
+        <circle cx="650" cy="360" r="30"></circle>
+    </svg>
+
+    <div id="tooltip">
+        <h3 id="title">Lorem Ipsum</h3>
+        <p id="subtitle">Dolor sit amet</p>
+    </div>
+
+    <style>
+        #tooltip {
+            display: none;
+            position: absolute;
+            border-bottom: 1px dotted #666;
+            background-color: FloralWhite;
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+
+    <script>
+        // Data Join
+        d3.selectAll("circle").style("fill", "blue");
+        var abuses = [
+            { district: "Central & Western", cases: 14.5 },
+            { district: "Wan Chai", cases: 18.7 },
+            { district: "Eastern", cases: 18.2 },
+            { district: "Southern", cases: 22.0 },
+            { district: "Yau Tsim Mong", cases: 17.1 },
+            { district: "Sham Shui Po", cases: 21.3 },
+            { district: "Kowloon City", cases: 17.5 },
+            { district: "Wong Tai Sin", cases: 20.1 },
+            { district: "Kwun Tong", cases: 15.9 },
+            { district: "Kwai Tsing", cases: 23.3 },
+            { district: "Tsuen Wan", cases: 14.9 },
+            { district: "Tuen Mun", cases: 38.3 },
+            { district: "Yuen Long", cases: 42.6 },
+            { district: "Northern", cases: 17.6 },
+            { district: "Tai Po", cases: 16.3 },
+            { district: "Shatin", cases: 14.1 },
+            { district: "Sai Kung", cases: 17.8 },
+            { district: "Islands", cases: 21.0 }
+        ];
+        var circles = d3.selectAll("circle");
+        circles.data(abuses);
+
+        circles.attr("r", function (d) {
+            return d.cases;
+        });
+        // Scale Function
+        // var myColorScale = d3.scaleLinear().domain([14, 43]).range(["green", "red"]);
+        var myColorScale = d3.scaleLinear().domain([14, 19, 43]).range(["green", "orange", "red"]);
+        circles.style("fill", function (d) {
+            return myColorScale(d.cases);
+        });
+        // Interaction
+        var tooltip = d3.select("#tooltip");
+        var title = d3.select("#title");
+        var subtitle = d3.select("#subtitle");
+
+        circles
+            .on("mouseover", function (event, d) {
+                tooltip.style("display", "block");
+
+                title.text(d.district);
+                subtitle.text(d.cases + " cases per 100k population.");
+            })
+            .on("mouseout", function () {
+                tooltip.style("display", "none");
+            })
+            .on('mousemove', function (event) {
+                let coords = d3.pointer(event);
+                tooltip
+                    .style("left", (coords[0] + 15) + "px")
+                    .style("top", (coords[1] - 95) + "px");
+            });
+    </script>
+
+</body>
+
+</html>
