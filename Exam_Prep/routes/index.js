@@ -23,4 +23,18 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.post("/booking", function(req,res) {
+  db.getCollection("bookings").insertOne(req.body);
+  res.status(201);
+});
+
+router.get("/booking", function(req,res) {
+  result = db.getCollection("bookings").findOne(req.body);
+  if (result) {
+    res.status(201).json(result);
+  } else {
+    res.status(404).send("not found");
+  }
+})
+
 module.exports = router;

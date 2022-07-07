@@ -39,39 +39,26 @@ router.post('/form', function (req, res) {
 
 /* Display all Bookings */
 router.get('/bookings', function (req, res) {
-
   var result = db.getCollection("bookings").find();
-
   res.render('bookings', { bookings: result });
 });
 
 /* Display a single Booking */
 router.get('/bookings/read/:id', function (req, res) {
-
   console.log(req.params.id)
-
   let result = db.getCollection("bookings").findOne({ $loki: parseInt(req.params.id) });
-
   if (result)
     res.render('booking', { booking: result });
   else
     res.status(404).send('Unable to find the requested resource!');
-
 });
 
 // Delete a single Booking 
 router.post('/bookings/delete/:id', function (req, res) {
-
   // db.getCollection("bookings").findAndRemove({ $loki: parseInt(req.params.id) });
-
   let result = db.getCollection("bookings").findOne({ $loki: parseInt(req.params.id) });
-
   if (!result) return res.status(404).send('Unable to find the requested resource!');
-
   db.getCollection("bookings").remove(result);
-
-  // res.send("Booking deleted.");
-  // res.redirect("/bookings");
   if (req.get('Accept').indexOf('html') === -1) {
     return res.status(204).send();	    // for ajax request
   } else {
@@ -82,11 +69,8 @@ router.post('/bookings/delete/:id', function (req, res) {
 
 // Form for updating a single Booking 
 router.get('/bookings/update/:id', function (req, res) {
-
   let result = db.getCollection("bookings").findOne({ $loki: parseInt(req.params.id) });
-
   if (!result) return res.status(404).send('Unable to find the requested resource!');
-
   res.render("update", { booking: result })
 
 });
@@ -147,10 +131,10 @@ router.get('/bookings/aginate', function (req, res) {
     var results = db.getCollection("bookings").chain().find({}).offset(start).limit(count).data();
     return res.json(results);
 
-} else {
+  } else {
     var totalNumRecords = db.getCollection("bookings").count();
     return res.render('aginate', { numOfRecords: totalNumRecords });
-}
+  }
 });
 
 //VueJS
@@ -165,12 +149,12 @@ router.get("/bookings/vaginate", function (req, res) {
 
     return res.json(results);
 
-} else {
+  } else {
 
     var totalNumRecords = db.getCollection("bookings").count();
 
     return res.render('vaginate', { numOfRecords: totalNumRecords });
-}
+  }
 });
 
 module.exports = router;
